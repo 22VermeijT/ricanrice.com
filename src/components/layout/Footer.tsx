@@ -67,7 +67,7 @@ export default function Footer() {
               {[
                 [t.footer.home, "/"],
                 [t.footer.fullMenu, "/menu"],
-                [t.footer.bookCatering, "/catering"],
+                [t.footer.bookCatering, "/order"],
                 [t.footer.ourStory, "#about"],
                 [t.footer.orderLunch, "/order"],
               ].map(([label, href]) => (

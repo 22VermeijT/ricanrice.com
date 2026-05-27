@@ -3,6 +3,7 @@ import { Playfair_Display, Inter, Dancing_Script } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import StickyOrderCTA from "@/components/ui/StickyOrderCTA";
 import { LanguageProvider } from "@/components/LanguageContext";
 
 const playfair = Playfair_Display({
@@ -42,14 +43,51 @@ export const metadata: Metadata = {
     url: "https://ricanrice.com",
     siteName: "Rican Rice",
     locale: "en_US",
-    images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "Rican Rice — Authentic Puerto Rican Catering Madison WI" }],
+    images: [{ url: "/og", width: 1200, height: 630, alt: "Rican Rice — Authentic Puerto Rican Catering Madison WI" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Rican Rice — La Casa del Arroz",
     description: "Authentic Puerto Rican flavor for every celebration. Madison's premier catering experience.",
-    images: ["/og-image.jpg"],
+    images: ["/og"],
   },
+};
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "CateringService",
+  name: "Rican Rice",
+  alternateName: "La Casa del Arroz",
+  description:
+    "Madison's premier Puerto Rican catering experience. Authentic family recipes, handcrafted meals for weddings, corporate events, quinceañeras, and every celebration.",
+  url: "https://ricanrice.com",
+  logo: "https://ricanrice.com/logo.png",
+  image: "https://ricanrice.com/og",
+  telephone: "+16082199268",
+  email: "ricanricecatering@gmail.com",
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Madison",
+    addressRegion: "WI",
+    addressCountry: "US",
+  },
+  areaServed: {
+    "@type": "State",
+    name: "Wisconsin",
+  },
+  servesCuisine: "Puerto Rican",
+  priceRange: "$$",
+  openingHoursSpecification: [
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Monday", "Wednesday", "Friday"],
+      opens: "11:00",
+      closes: "14:00",
+    },
+  ],
+  sameAs: [
+    "https://www.facebook.com/profile.php?id=61567520785285",
+  ],
 };
 
 export default function RootLayout({
@@ -62,11 +100,18 @@ export default function RootLayout({
       lang="en"
       className={`${playfair.variable} ${inter.variable} ${dancingScript.variable}`}
     >
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body>
         <LanguageProvider>
-<Header />
+          <Header />
           <main>{children}</main>
           <Footer />
+          <StickyOrderCTA />
         </LanguageProvider>
       </body>
     </html>

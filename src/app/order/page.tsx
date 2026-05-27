@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     title: "Order & Book Catering — Rican Rice",
     description: "Place a lunch order or book catering with Rican Rice. Authentic Puerto Rican food in Madison, Wisconsin.",
     url: "https://ricanrice.com/order",
-    images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "Order Rican Rice Catering" }],
+    images: [{ url: "/og", width: 1200, height: 630, alt: "Order Rican Rice Catering" }],
   },
 };
 

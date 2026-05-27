@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     title: "Full Menu — Rican Rice | Authentic Puerto Rican Food Madison WI",
     description: "Explore our full menu of authentic Puerto Rican dishes. Available for catering and lunch delivery in Madison, Wisconsin.",
     url: "https://ricanrice.com/menu",
-    images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "Rican Rice Full Menu" }],
+    images: [{ url: "/og", width: 1200, height: 630, alt: "Rican Rice Full Menu" }],
   },
 };
 

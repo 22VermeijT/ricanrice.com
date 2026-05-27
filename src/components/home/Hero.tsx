@@ -117,15 +117,6 @@ export default function Hero() {
             <motion.p
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.28 }}
-              className="text-xl text-white/40 mb-2"
-              style={{ fontFamily: "var(--font-accent)", textShadow: "0 0 30px rgba(200,149,44,0.4)" }}
-            >
-            </motion.p>
-
-            <motion.p
-              initial={{ opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.32 }}
               className="text-white/55 text-base leading-relaxed mb-10 max-w-md"
             >
