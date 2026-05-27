@@ -86,13 +86,28 @@ export default function CateringForm() {
 
   const onSubmit = async (data: FormData) => {
     setLoading(true);
-    // Simulate form submission
-    await new Promise((r) => setTimeout(r, 1800));
-    console.log("Form submitted:", data);
-    setLoading(false);
-    setSubmitted(true);
-    setToastVisible(true);
-    setTimeout(() => setToastVisible(false), 5000);
+    try {
+      const res = await fetch("https://formspree.io/f/xnjrowyg", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json",
+        },
+        body: JSON.stringify({
+          _subject: "New Catering Inquiry",
+          ...data,
+        }),
+      });
+      const json = await res.json();
+      if (!res.ok || json.errors) throw new Error("Request failed");
+      setSubmitted(true);
+      setToastVisible(true);
+      setTimeout(() => setToastVisible(false), 5000);
+    } catch {
+      alert("Something went wrong. Please call or text us at (608) 219-9268.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   if (submitted) {

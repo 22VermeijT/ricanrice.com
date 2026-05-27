@@ -77,12 +77,20 @@ export default function OrderForm() {
   const onSubmit = async (data: FormData) => {
     setLoading(true);
     try {
-      const res = await fetch("/api/order", {
+      const res = await fetch("https://formspree.io/f/xnjrowyg", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ orderType, ...data }),
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json",
+        },
+        body: JSON.stringify({
+          _subject: orderType === "lunch" ? "New Lunch Order" : "New Catering Request",
+          orderType,
+          ...data,
+        }),
       });
-      if (!res.ok) throw new Error("Request failed");
+      const json = await res.json();
+      if (!res.ok || json.errors) throw new Error("Request failed");
       setSubmitted(true);
     } catch {
       alert("Something went wrong. Please call or text us at (608) 219-9268.");
