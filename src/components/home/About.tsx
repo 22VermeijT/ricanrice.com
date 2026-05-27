@@ -189,7 +189,7 @@ export default function About() {
               <motion.div
                 className="relative overflow-hidden p-8 group cursor-default h-full"
                 style={{ backgroundColor: v.bg }}
-                whileHover={{ scale: 1.02, boxShadow: `0 0 32px ${v.color}55, 0 8px 32px rgba(0,0,0,0.3)` }}
+                whileHover={{ scale: 1.02, boxShadow: `0 0 32px ${v.bg}55, 0 8px 32px rgba(0,0,0,0.3)` }}
                 transition={{ duration: 0.2 }}
               >
                 <div className="mb-4 text-white">{v.icon}</div>

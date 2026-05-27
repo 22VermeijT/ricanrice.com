@@ -73,19 +73,6 @@ export default function Hero() {
 
           {/* LEFT — Typography */}
           <div>
-            <motion.div
-              initial={{ opacity: 0, x: -24 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5 }}
-              className="flex items-center gap-3 mb-7"
-            >
-              <PrStar size={18} color="#E8192C" className="drop-glow-red" />
-              <span className="text-[#E8192C] text-xs font-bold tracking-[0.25em] uppercase">
-                {t.hero.badge}
-              </span>
-              <PrStar size={18} color="#E8192C" className="drop-glow-red" />
-            </motion.div>
-
             <motion.h1
               initial={{ opacity: 0, y: 32 }}
               animate={{ opacity: 1, y: 0 }}

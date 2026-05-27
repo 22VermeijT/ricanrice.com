@@ -47,20 +47,12 @@ export default function Header() {
               className="object-cover scale-[1.42]"
             />
           </div>
-          <div className="flex flex-col leading-none">
-            <span
-              className="font-bold text-xl tracking-tight text-white"
-              style={{ fontFamily: "var(--font-display)" }}
-            >
-              Rican Rice
-            </span>
-            <span
-              className="text-[#C8952C] text-xs"
-              style={{ fontFamily: "var(--font-accent)" }}
-            >
-              La Casa del Arroz
-            </span>
-          </div>
+          <span
+            className="text-white text-2xl font-bold"
+            style={{ fontFamily: "var(--font-accent)" }}
+          >
+            Rican Rice
+          </span>
         </Link>
 
         {/* Desktop Nav */}
