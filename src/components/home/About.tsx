@@ -103,7 +103,7 @@ export default function About() {
 
                 {/* Food photo — no overlays */}
                 <Image
-                  src="/about-rice-bowl-v2.png"
+                  src="/about-rice-bowl-v3.jpg"
                   alt="Arroz con Gandules, Puerto Rico's national dish"
                   fill
                   sizes="(max-width: 1024px) 100vw, 50vw"
