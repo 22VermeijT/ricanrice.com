@@ -442,5 +442,6 @@ export const menuItems: MenuItem[] = [
     dietaryNotes: ["Vegetarian", "Gluten-free"],
     icon: "Utensils",
     gradient: "from-stone-600 to-stone-400",
+    photo: "/pure-papas-mayonesa.png",
   },
 ];
