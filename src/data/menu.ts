@@ -292,6 +292,7 @@ export const menuItems: MenuItem[] = [
     dietaryNotes: ["Gluten-free", "Dairy-free"],
     icon: "Soup",
     gradient: "from-green-900 to-emerald-700",
+    photo: "/guineitos-mollejas.png",
   },
 
   {
