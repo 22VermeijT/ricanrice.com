@@ -314,6 +314,7 @@ export const menuItems: MenuItem[] = [
     dietaryNotes: ["Gluten-free"],
     icon: "Utensils",
     gradient: "from-amber-800 to-orange-700",
+    photo: "/pastelon-carne-molida.png",
   },
 
   // ── BY THE DOZEN ──────────────────────────────────────────────────────────
