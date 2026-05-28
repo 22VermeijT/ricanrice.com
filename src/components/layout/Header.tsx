@@ -44,7 +44,7 @@ export default function Header() {
               alt="Rican Rice"
               fill
               priority
-              className="object-cover scale-[1.42]"
+              className="object-cover scale-[1.1]"
             />
           </div>
           <span

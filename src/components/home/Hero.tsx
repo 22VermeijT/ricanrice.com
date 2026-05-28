@@ -150,7 +150,7 @@ export default function Hero() {
               className="relative z-10 w-[400px] h-[400px] rounded-full overflow-hidden"
               style={{ boxShadow: "0 0 60px rgba(200,149,44,0.5), 0 0 120px rgba(200,149,44,0.2), 0 30px 80px rgba(0,0,0,0.5)" }}
             >
-              <Image src="/logo.png" alt="Rican Rice" fill priority className="object-cover scale-[1.42]" />
+              <Image src="/logo.png" alt="Rican Rice" fill priority className="object-cover scale-[1.1]" />
             </motion.div>
 
             <motion.div

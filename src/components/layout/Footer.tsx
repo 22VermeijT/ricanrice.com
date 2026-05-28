@@ -22,7 +22,7 @@ export default function Footer() {
                 className="relative w-[64px] h-[64px] rounded-full overflow-hidden shrink-0"
                 style={{ boxShadow: "0 0 20px rgba(200,149,44,0.35)" }}
               >
-                <Image src="/logo.png" alt="Rican Rice" fill className="object-cover scale-[1.42]" />
+                <Image src="/logo.png" alt="Rican Rice" fill className="object-cover scale-[1.1]" />
               </div>
               <div>
                 <div className="text-white font-bold text-2xl" style={{ fontFamily: "var(--font-display)" }}>
