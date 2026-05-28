@@ -139,6 +139,7 @@ export const menuItems: MenuItem[] = [
     dietaryNotes: ["Dairy-free"],
     icon: "UtensilsCrossed",
     gradient: "from-red-800 to-orange-700",
+    photo: "/arroz-spaghetti-meatballs.png",
   },
 
   {
