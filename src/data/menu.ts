@@ -355,6 +355,7 @@ export const menuItems: MenuItem[] = [
     dietaryNotes: ["Gluten-free", "Dairy-free"],
     icon: "LeafyGreen",
     gradient: "from-green-800 to-green-600",
+    photo: "/pasteles-guineo.png",
   },
 
   {
