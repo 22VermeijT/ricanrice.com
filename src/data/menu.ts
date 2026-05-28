@@ -117,6 +117,7 @@ export const menuItems: MenuItem[] = [
     dietaryNotes: ["Gluten-free", "Dairy-free"],
     icon: "Fish",
     gradient: "from-blue-800 to-cyan-700",
+    photo: "/arroz-calamares-habichuelas.png",
   },
 
   {
