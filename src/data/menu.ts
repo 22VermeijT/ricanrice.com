@@ -183,6 +183,7 @@ export const menuItems: MenuItem[] = [
     dietaryNotes: ["Gluten-free", "Dairy-free"],
     icon: "Beef",
     gradient: "from-red-950 to-amber-900",
+    photo: "/bistec-encebollado.png",
   },
 
   {
