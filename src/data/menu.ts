@@ -95,6 +95,7 @@ export const menuItems: MenuItem[] = [
     dietaryNotes: ["Gluten-free"],
     icon: "Beef",
     gradient: "from-amber-800 to-yellow-700",
+    photo: "/chuletas-can-can.png",
   },
 
   {
