@@ -205,6 +205,7 @@ export const menuItems: MenuItem[] = [
     dietaryNotes: ["Gluten-free", "Dairy-free"],
     icon: "Fish",
     gradient: "from-rose-800 to-pink-600",
+    photo: "/arroz-camarones-kingcrab.png",
   },
 
   {
