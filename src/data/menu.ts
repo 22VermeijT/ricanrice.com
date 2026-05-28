@@ -227,6 +227,7 @@ export const menuItems: MenuItem[] = [
     dietaryNotes: ["Dairy-free"],
     icon: "UtensilsCrossed",
     gradient: "from-orange-800 to-amber-700",
+    photo: "/pollo-frito-habichuelas-negras.png",
   },
 
   {
