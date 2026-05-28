@@ -382,6 +382,7 @@ export const menuItems: MenuItem[] = [
     dietaryNotes: ["Gluten-free"],
     icon: "UtensilsCrossed",
     gradient: "from-amber-900 to-yellow-800",
+    photo: "/alcapurrias.png",
   },
 
   // ── DESSERTS ──────────────────────────────────────────────────────────────
