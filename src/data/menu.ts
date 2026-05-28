@@ -404,6 +404,7 @@ export const menuItems: MenuItem[] = [
     dietaryNotes: ["Gluten-free", "Vegetarian"],
     icon: "Star",
     gradient: "from-amber-500 to-yellow-400",
+    photo: "/flan-vainilla-queso.png",
   },
 
   {
