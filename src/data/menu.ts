@@ -333,6 +333,7 @@ export const menuItems: MenuItem[] = [
     dietaryNotes: ["Gluten-free", "Dairy-free"],
     icon: "LeafyGreen",
     gradient: "from-green-900 to-emerald-700",
+    photo: "/pasteles-yuca.png",
   },
 
   {
