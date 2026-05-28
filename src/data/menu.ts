@@ -249,6 +249,7 @@ export const menuItems: MenuItem[] = [
     dietaryNotes: ["Gluten-free", "Vegetarian"],
     icon: "Utensils",
     gradient: "from-yellow-700 to-amber-500",
+    photo: "/arroz-pastelon-rositas.png",
   },
 
   {
