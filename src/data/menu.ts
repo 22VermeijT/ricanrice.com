@@ -271,6 +271,7 @@ export const menuItems: MenuItem[] = [
     dietaryNotes: ["Gluten-free"],
     icon: "Star",
     gradient: "from-amber-600 to-yellow-500",
+    photo: "/piononos-rositas.png",
   },
 
   {
