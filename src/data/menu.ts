@@ -426,6 +426,7 @@ export const menuItems: MenuItem[] = [
     dietaryNotes: ["Vegetarian"],
     icon: "Star",
     gradient: "from-amber-200 to-yellow-100",
+    photo: "/bizcocho-almendras.png",
   },
 
   // ── SIDES ─────────────────────────────────────────────────────────────────
