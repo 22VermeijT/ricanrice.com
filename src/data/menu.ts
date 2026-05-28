@@ -73,6 +73,7 @@ export const menuItems: MenuItem[] = [
     dietaryNotes: ["Gluten-free"],
     icon: "UtensilsCrossed",
     gradient: "from-orange-700 to-amber-600",
+    photo: "/pollo-horneado-pan-ajo-papa.png",
   },
 
   {
