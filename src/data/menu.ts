@@ -51,6 +51,7 @@ export const menuItems: MenuItem[] = [
     dietaryNotes: ["Gluten-free"],
     icon: "Utensils",
     gradient: "from-amber-700 to-yellow-600",
+    photo: "/arroz-gandules-cerdo-amarillos.png",
   },
 
   {
