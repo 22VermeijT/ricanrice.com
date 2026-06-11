@@ -95,11 +95,20 @@ export default function Hero() {
               initial={{ opacity: 0, y: 32 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.75, delay: 0.18 }}
-              className="text-[clamp(3.5rem,8vw,6.5rem)] font-bold text-white leading-[1.0] mb-8"
+              className="text-[clamp(3.5rem,8vw,6.5rem)] font-bold text-white leading-[1.0] mb-4"
               style={{ fontFamily: "var(--font-display)" }}
             >
               {t.hero.line3}
             </motion.h1>
+
+            <motion.p
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.26 }}
+              className="text-[#C8952C] text-sm font-bold tracking-[0.25em] uppercase mb-6"
+            >
+              {t.hero.tagline}
+            </motion.p>
 
             <motion.p
               initial={{ opacity: 0, y: 16 }}
