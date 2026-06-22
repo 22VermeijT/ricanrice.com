@@ -70,8 +70,8 @@ export default function Footer() {
                 [t.footer.bookCatering, "/order"],
                 [t.footer.ourStory, "#about"],
                 [t.footer.orderLunch, "/order"],
-              ].map(([label, href]) => (
-                <li key={href}>
+              ].map(([label, href], i) => (
+                <li key={i}>
                   <Link href={href} className="text-white/50 hover:text-white text-sm transition-colors">
                     {label}
                   </Link>
@@ -108,9 +108,9 @@ export default function Footer() {
               {t.footer.contact}
             </h3>
             <div className="space-y-4 mb-6">
-              <a href="tel:+16082199268" className="flex items-center gap-3 text-white/60 hover:text-white transition-colors text-sm">
+              <a href="tel:+16084197840" className="flex items-center gap-3 text-white/60 hover:text-white transition-colors text-sm">
                 <Phone className="w-4 h-4 text-[#E8192C] shrink-0" />
-                (608) 219-9268
+                (608) 419-7840
               </a>
               <a href="mailto:ricanricecatering@gmail.com" className="flex items-center gap-3 text-white/60 hover:text-white transition-colors text-sm">
                 <Mail className="w-4 h-4 text-[#E8192C] shrink-0" />

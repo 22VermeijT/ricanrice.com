@@ -99,7 +99,7 @@ export default function OrderSidebar() {
         </h3>
         <div className="space-y-4">
           <a
-            href="tel:+16082199268"
+            href="tel:+16084197840"
             className="flex items-center gap-3 text-[#6E6E73] hover:text-[#001435] transition-colors text-sm"
           >
             <div className="w-9 h-9 bg-[#E8192C] flex items-center justify-center shrink-0">
@@ -107,7 +107,7 @@ export default function OrderSidebar() {
             </div>
             <div>
               <p className="text-[#6E6E73] text-xs">{t.orderPage.callOrText}</p>
-              <p className="font-semibold text-[#1C1C1E]">(608) 219-9268</p>
+              <p className="font-semibold text-[#1C1C1E]">(608) 419-7840</p>
             </div>
           </a>
           <div className="flex items-center gap-3 text-[#6E6E73] text-sm">

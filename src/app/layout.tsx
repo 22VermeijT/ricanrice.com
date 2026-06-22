@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import StickyOrderCTA from "@/components/ui/StickyOrderCTA";
+import RestaurantComingSoonBanner from "@/components/ui/RestaurantComingSoonBanner";
 import { LanguageProvider } from "@/components/LanguageContext";
 
 const playfair = Playfair_Display({
@@ -63,7 +64,7 @@ const jsonLd = {
   url: "https://ricanrice.com",
   logo: "https://ricanrice.com/logo.png",
   image: "https://ricanrice.com/og",
-  telephone: "+16082199268",
+  telephone: "+16084197840",
   email: "ricanricecatering@gmail.com",
   address: {
     "@type": "PostalAddress",
@@ -109,6 +110,7 @@ export default function RootLayout({
       <body>
         <LanguageProvider>
           <Header />
+          <RestaurantComingSoonBanner />
           <main>{children}</main>
           <Footer />
           <StickyOrderCTA />

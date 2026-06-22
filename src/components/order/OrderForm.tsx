@@ -93,7 +93,7 @@ export default function OrderForm() {
       if (!res.ok || json.errors) throw new Error("Request failed");
       setSubmitted(true);
     } catch {
-      alert("Something went wrong. Please call or text us at (608) 219-9268.");
+      alert("Something went wrong. Please call or text us at (608) 419-7840.");
     } finally {
       setLoading(false);
     }

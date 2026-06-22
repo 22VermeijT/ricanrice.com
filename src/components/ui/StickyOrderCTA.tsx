@@ -33,7 +33,7 @@ export default function StickyOrderCTA() {
             }}
           >
             <Phone className="w-5 h-5" aria-hidden="true" />
-            Order Now · (608) 219-9268
+            Order Now · (608) 419-7840
           </a>
         </motion.div>
       )}
