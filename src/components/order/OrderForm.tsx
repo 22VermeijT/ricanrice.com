@@ -3,19 +3,21 @@
 import { useState } from "react";
 import { useForm, Controller } from "react-hook-form";
 import { motion, AnimatePresence } from "framer-motion";
-import { CheckCircle, ChevronDown, Loader2, Send, Info, UtensilsCrossed, PartyPopper } from "lucide-react";
+// LUNCH REMOVED: UtensilsCrossed, PartyPopper were used for the lunch/catering toggle
+import { CheckCircle, ChevronDown, Loader2, Send, Info } from "lucide-react";
 import { useLanguage } from "@/components/LanguageContext";
 
-type OrderType = "lunch" | "catering";
+// LUNCH REMOVED: "lunch" type kept for easy restoration
+type OrderType = /* "lunch" | */ "catering";
 
 type FormData = {
   name: string;
   email: string;
   phone: string;
   notes: string;
-  // Lunch-specific
-  pickupDay: "Monday" | "Wednesday" | "Friday";
-  lunchQty: number;
+  // LUNCH REMOVED: lunch-specific fields kept for easy restoration
+  // pickupDay: "Monday" | "Wednesday" | "Friday";
+  // lunchQty: number;
   // Catering-specific
   eventDate: string;
   guestCount: string;
@@ -53,26 +55,27 @@ export default function OrderForm() {
   const { t } = useLanguage();
   const f = t.orderForm;
 
-  const [orderType, setOrderType] = useState<OrderType>("lunch");
+  // LUNCH REMOVED: was "lunch" — now always catering; setOrderType kept for easy restoration
+  const [orderType, setOrderType] = useState<OrderType>("catering");
+  void setOrderType; // suppress unused-var until lunch toggle is restored
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
 
   const {
     register,
     handleSubmit,
-    watch,
+    // LUNCH REMOVED: watch was used for lunchQty calculation
     control,
     formState: { errors },
   } = useForm<FormData>({
     defaultValues: {
-      pickupDay: "Monday",
-      lunchQty: 1,
+      // LUNCH REMOVED: pickupDay: "Monday", lunchQty: 1,
       serviceType: "delivery",
     },
   });
 
-  const lunchQty = Number(watch("lunchQty")) || 0;
-  const total = lunchQty * 14.99;
+  // LUNCH REMOVED: const lunchQty = Number(watch("lunchQty")) || 0;
+  // LUNCH REMOVED: const total = lunchQty * 14.99;
 
   const onSubmit = async (data: FormData) => {
     setLoading(true);
@@ -84,7 +87,7 @@ export default function OrderForm() {
           "Accept": "application/json",
         },
         body: JSON.stringify({
-          _subject: orderType === "lunch" ? "New Lunch Order" : "New Catering Request",
+          _subject: "New Catering Request",
           orderType,
           ...data,
         }),
@@ -113,7 +116,8 @@ export default function OrderForm() {
           {f.successHeading}
         </h3>
         <p className="text-[#6E6E73] text-lg leading-relaxed max-w-md mx-auto">
-          {orderType === "lunch" ? f.successLunch : f.successCatering}
+          {/* LUNCH REMOVED: was orderType === "lunch" ? f.successLunch : f.successCatering */}
+          {f.successCatering}
         </p>
       </motion.div>
     );
@@ -134,7 +138,7 @@ export default function OrderForm() {
         </p>
       </div>
 
-      {/* Type toggle */}
+      {/* LUNCH REMOVED: type toggle (lunch / catering) — restore when lunch ordering returns
       <div className="grid grid-cols-2 gap-3">
         {([
           { type: "lunch" as const, label: f.typeLunch, sub: f.typeLunchSub, Icon: UtensilsCrossed },
@@ -159,13 +163,15 @@ export default function OrderForm() {
           </button>
         ))}
       </div>
+      */}
 
       {/* Disclaimer */}
       <div className="flex gap-3 bg-[#001435]/5 border border-[#001435]/15 px-4 py-4">
         <Info className="w-5 h-5 text-[#001435] shrink-0 mt-0.5" />
         <p className="text-sm text-[#1C1C1E] leading-relaxed">
           <span className="font-bold">{f.disclaimerBold}</span>{" "}
-          {orderType === "lunch" ? f.disclaimerLunch : f.disclaimerCatering}
+          {/* LUNCH REMOVED: was orderType === "lunch" ? f.disclaimerLunch : f.disclaimerCatering */}
+          {f.disclaimerCatering}
         </p>
       </div>
 
@@ -220,18 +226,10 @@ export default function OrderForm() {
         {errors.email && <p className="mt-1 text-xs text-[#E8192C] font-medium">{errors.email.message}</p>}
       </div>
 
-      {/* Conditional fields */}
+      {/* LUNCH REMOVED: conditional lunch fields — restore when lunch ordering returns
       <AnimatePresence mode="wait">
         {orderType === "lunch" ? (
-          <motion.div
-            key="lunch"
-            initial={{ opacity: 0, y: 8 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -8 }}
-            transition={{ duration: 0.2 }}
-            className="space-y-6"
-          >
-            {/* Pickup day */}
+          <motion.div key="lunch" initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -8 }} transition={{ duration: 0.2 }} className="space-y-6">
             <div>
               <label className={labelClass}>{f.pickupDayLabel} *</label>
               <div className="grid grid-cols-3 gap-3">
@@ -246,8 +244,6 @@ export default function OrderForm() {
                 ))}
               </div>
             </div>
-
-            {/* Order item */}
             <div>
               <label className={labelClass}>{f.numLunchesLabel}</label>
               <div className="flex items-center justify-between px-5 py-5 border border-gray-200">
@@ -256,29 +252,21 @@ export default function OrderForm() {
                   <p className="text-[#6E6E73] text-xs mt-0.5">{f.lunchItemDesc}</p>
                 </div>
                 <div className="flex items-center gap-4">
-                  <span className="text-[#C8952C] font-bold text-2xl" style={{ fontFamily: "var(--font-display)" }}>
-                    {f.lunchPrice}
-                  </span>
-                  <input
-                    type="number"
-                    inputMode="numeric"
-                    min={1}
-                    {...register("lunchQty", { valueAsNumber: true, min: 1 })}
-                    className="w-20 bg-white border border-gray-200 text-[#1C1C1E] text-sm font-bold px-3 py-2 text-center focus:outline-none focus:border-[#001435] transition-colors"
-                  />
+                  <span className="text-[#C8952C] font-bold text-2xl" style={{ fontFamily: "var(--font-display)" }}>{f.lunchPrice}</span>
+                  <input type="number" inputMode="numeric" min={1} {...register("lunchQty", { valueAsNumber: true, min: 1 })} className="w-20 bg-white border border-gray-200 text-[#1C1C1E] text-sm font-bold px-3 py-2 text-center focus:outline-none focus:border-[#001435] transition-colors" />
                 </div>
               </div>
               <div className="flex items-center justify-between mt-2 px-1">
-                <p className="text-xs text-[#6E6E73]">
-                  {lunchQty >= 3 ? f.freeDeliveryEarned : f.freeDeliveryThreshold}
-                </p>
-                <span className="text-sm text-[#6E6E73]">
-                  {f.estTotal} <span className="font-bold text-[#001435]">${total.toFixed(2)}</span>
-                </span>
+                <p className="text-xs text-[#6E6E73]">{lunchQty >= 3 ? f.freeDeliveryEarned : f.freeDeliveryThreshold}</p>
+                <span className="text-sm text-[#6E6E73]">{f.estTotal} <span className="font-bold text-[#001435]">${total.toFixed(2)}</span></span>
               </div>
             </div>
           </motion.div>
         ) : (
+      */}
+
+      {/* Catering fields — always shown now that lunch is removed */}
+      <AnimatePresence mode="wait">
           <motion.div
             key="catering"
             initial={{ opacity: 0, y: 8 }}
@@ -368,13 +356,13 @@ export default function OrderForm() {
               </div>
             </div>
           </motion.div>
-        )}
       </AnimatePresence>
 
       {/* Common: Notes */}
       <div>
         <label className={labelClass}>
-          {orderType === "lunch" ? f.notesLunchLabel : f.notesCateringLabel}
+          {/* LUNCH REMOVED: was orderType === "lunch" ? f.notesLunchLabel : f.notesCateringLabel */}
+          {f.notesCateringLabel}
           {" "}<span className="text-[#E8192C]">*</span>
         </label>
         <textarea
@@ -382,7 +370,7 @@ export default function OrderForm() {
             required: f.errorNotesMin,
             minLength: { value: 5, message: f.errorNotesMin },
           })}
-          placeholder={orderType === "lunch" ? f.notesLunchPlaceholder : f.notesCateringPlaceholder}
+          placeholder={/* LUNCH REMOVED: was orderType === "lunch" ? f.notesLunchPlaceholder : */ f.notesCateringPlaceholder}
           rows={4}
           className={`${inputClass} resize-none ${errors.notes ? "border-[#E8192C] ring-2 ring-[#E8192C]/10" : ""}`}
         />
@@ -400,7 +388,8 @@ export default function OrderForm() {
         {loading ? (
           <><Loader2 className="w-5 h-5 animate-spin" /> {f.sending}</>
         ) : (
-          <><Send className="w-5 h-5" /> {orderType === "lunch" ? f.submitLunch : f.submitCatering}</>
+          // LUNCH REMOVED: was orderType === "lunch" ? f.submitLunch : f.submitCatering
+          <><Send className="w-5 h-5" /> {f.submitCatering}</>
         )}
       </motion.button>
     </form>

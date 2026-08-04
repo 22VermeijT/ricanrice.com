@@ -34,10 +34,10 @@ export const services: Service[] = [
     nameEs: "Eventos Corporativos",
     nameEn: "Corporate Events",
     description:
-      "Elevate your next company event with catering that leaves a lasting impression. We specialize in corporate lunches, holiday parties, and client appreciation events.",
+      "Elevate your next company event with catering that leaves a lasting impression. We specialize in corporate events, holiday parties, and client appreciation events.",
     details: [
       "Flexible drop-off or full-service",
-      "Individual boxed lunch options",
+      "Individual boxed meal options",
       "Large-format buffet spreads",
       "Dietary accommodation support",
       "Professional presentation",

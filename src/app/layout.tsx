@@ -32,9 +32,9 @@ export const metadata: Metadata = {
     template: "%s | Rican Rice",
   },
   description:
-    "Madison's premier Puerto Rican catering experience. Authentic family recipes, handcrafted meals for weddings, corporate events, quinceañeras, and every celebration. Order lunch Mon/Wed/Fri.",
+    "Madison's premier Puerto Rican catering experience. Authentic family recipes, handcrafted meals for weddings, corporate events, quinceañeras, and every celebration.",
   keywords:
-    "Puerto Rican catering Madison WI, Puerto Rican food Wisconsin, catering Madison Wisconsin, authentic Puerto Rican catering, Puerto Rican lunch delivery Madison",
+    "Puerto Rican catering Madison WI, Puerto Rican food Wisconsin, catering Madison Wisconsin, authentic Puerto Rican catering, Puerto Rican catering delivery Madison",
   authors: [{ name: "Rican Rice" }],
   openGraph: {
     title: "Rican Rice — La Casa del Arroz | Puerto Rican Catering Madison WI",

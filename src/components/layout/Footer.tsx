@@ -69,7 +69,7 @@ export default function Footer() {
                 [t.footer.fullMenu, "/menu"],
                 [t.footer.bookCatering, "/order"],
                 [t.footer.ourStory, "#about"],
-                [t.footer.orderLunch, "/order"],
+                // LUNCH REMOVED: [t.footer.orderLunch, "/order"],
               ].map(([label, href], i) => (
                 <li key={i}>
                   <Link href={href} className="text-white/50 hover:text-white text-sm transition-colors">
@@ -80,26 +80,34 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Hours */}
+          {/* Catering availability */}
           <div>
             <h3 className="text-[#C8952C] text-xs font-bold tracking-widest uppercase mb-5">
-              {t.footer.lunchHours}
+              {t.footer.cateringLabel}
             </h3>
             <div className="space-y-3 text-sm">
-              {[
-                [t.days.monday, "11am – 2pm"],
-                [t.days.wednesday, "11am – 2pm"],
-                [t.days.friday, "11am – 2pm"],
-              ].map(([day, time]) => (
-                <div key={day} className="flex items-center gap-3">
-                  <Clock className="w-4 h-4 text-[#E8192C] shrink-0" />
-                  <span className="text-white/60">
-                    <span className="text-white font-medium">{day}</span> · {time}
-                  </span>
-                </div>
-              ))}
-              <p className="text-white/30 text-xs mt-4 leading-relaxed">{t.footer.cateringAvailable}</p>
+              <div className="flex items-center gap-3">
+                <Clock className="w-4 h-4 text-[#E8192C] shrink-0" />
+                <span className="text-white/60">
+                  <span className="text-white font-medium">{t.footer.cateringDays}</span>
+                </span>
+              </div>
+              <p className="text-white/30 text-xs mt-2 leading-relaxed">{t.footer.cateringAvailable}</p>
             </div>
+            {/* LUNCH REMOVED: Mon/Wed/Fri 11am–2pm lunch hours — restore when lunch ordering returns
+            {[
+              [t.days.monday, "11am – 2pm"],
+              [t.days.wednesday, "11am – 2pm"],
+              [t.days.friday, "11am – 2pm"],
+            ].map(([day, time]) => (
+              <div key={day} className="flex items-center gap-3">
+                <Clock className="w-4 h-4 text-[#E8192C] shrink-0" />
+                <span className="text-white/60">
+                  <span className="text-white font-medium">{day}</span> · {time}
+                </span>
+              </div>
+            ))}
+            */}
           </div>
 
           {/* Contact */}

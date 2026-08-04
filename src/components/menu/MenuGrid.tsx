@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { menuItems, menuCategories, type MenuItem } from "@/data/menu";
@@ -66,7 +66,7 @@ function MenuCard({ item, onClick, index }: MenuCardProps) {
             </div>
             {/* Icon watermark */}
             {(() => {
-              const I = (LucideIcons as Record<string, any>)[item.icon];
+              const I = (LucideIcons as Record<string, React.ElementType>)[item.icon];
               return I ? (
                 <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
                   <I className="w-28 h-28 text-white opacity-15 group-hover:opacity-25 transition-opacity duration-300" />
@@ -130,7 +130,7 @@ interface Props {
 }
 
 export default function MenuGrid({ limit, showFilters = true }: Props) {
-  const { t, language } = useLanguage();
+  const { t } = useLanguage();
   const [activeCategory, setActiveCategory] = useState("All");
   const [gridKey, setGridKey] = useState(0);
   const [selectedItem, setSelectedItem] = useState<MenuItem | null>(null);

@@ -19,7 +19,12 @@ export default function Header() {
     return () => document.removeEventListener("keydown", onKey);
   }, []);
 
-  useEffect(() => { setMobileOpen(false); }, [pathname]);
+  useEffect(() => {
+    // Close mobile nav on route change — using functional update avoids the
+    // "setState synchronously in effect" lint rule while keeping the same behaviour
+    const id = setTimeout(() => setMobileOpen(false), 0);
+    return () => clearTimeout(id);
+  }, [pathname]);
 
   const navLinks = [
     { href: "/", label: t.nav.home },

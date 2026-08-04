@@ -200,7 +200,8 @@ export default function Hero() {
               <HibiscusFlower className="w-14 h-14 opacity-80" />
             </motion.div>
 
-<motion.div
+{/* LUNCH REMOVED: lunch availability badge
+            <motion.div
               className="absolute -bottom-4 right-4 z-30 bg-[#E8192C] text-white px-5 py-3 shadow-2xl"
               style={{ boxShadow: "0 0 30px rgba(232,25,44,0.5), 0 8px 30px rgba(0,0,0,0.4)" }}
               initial={{ opacity: 0, y: 20 }}
@@ -211,6 +212,7 @@ export default function Hero() {
               <p className="font-bold text-lg" style={{ fontFamily: "var(--font-display)" }}>Mon · Wed · Fri</p>
               <p className="text-xs text-white/70">11am – 2pm</p>
             </motion.div>
+            */}
           </motion.div>
 
         </div>{/* end grid */}

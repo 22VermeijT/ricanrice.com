@@ -108,7 +108,7 @@ export default function NotFound() {
             Looks like this plate is empty.
           </h2>
           <p className="text-white/50 text-base leading-relaxed mb-10 max-w-md mx-auto">
-            The page you're looking for doesn't exist, but our kitchen is still open. Head back home or check out the menu.
+            The page you&apos;re looking for doesn&apos;t exist, but our kitchen is still open. Head back home or check out the menu.
           </p>
 
           <div className="flex flex-wrap items-center justify-center gap-4">

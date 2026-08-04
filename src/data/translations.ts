@@ -16,7 +16,8 @@ export const translations = {
       tagline: "La Casa del Arroz",
       description:
         "Three generations of family recipes, brought from the island to your celebration. Catering weddings, quinceañeras, corporate events, and every occasion across Madison, Wisconsin.",
-      orderBtn: "Order Lunch Now",
+      // LUNCH REMOVED: was "Order Lunch Now"
+      orderBtn: "Book Catering",
       cateringBtn: "Book Catering",
     },
     marquee: {
@@ -158,8 +159,11 @@ export const translations = {
       fullMenu: "Full Menu",
       bookCatering: "Book Catering",
       ourStory: "Our Story",
+      // LUNCH REMOVED: orderLunch: "Order Lunch",
       orderLunch: "Order Lunch",
       lunchHours: "Lunch Hours",
+      cateringLabel: "Catering",
+      cateringDays: "7 days a week by appointment",
       contact: "Contact",
       cateringAvailable: "Catering available 7 days a week by appointment.",
       bookBtn: "Book Catering",
@@ -168,12 +172,14 @@ export const translations = {
       builtBy: "Built by",
     },
     orderPage: {
-      badge: "Order & Book",
-      heading1: "Lunch Order",
-      heading2: "or Catering Event",
-      subtext: "One form for everything. Tell us what you need and we'll follow up to confirm.",
+      badge: "Book Catering",
+      // LUNCH REMOVED: was "Lunch Order" / "or Catering Event"
+      heading1: "Catering",
+      heading2: "Inquiry",
+      subtext: "Tell us about your event and we'll follow up to confirm.",
       formHeading: "What can we get you?",
-      formSubtext: "Choose lunch or catering below, we handle both.",
+      // LUNCH REMOVED: was "Choose lunch or catering below, we handle both."
+      formSubtext: "Tell us about your event and we'll be in touch.",
       lunchHoursHeading: "Lunch Hours",
       lunchHoursNote: "Order by 10am, limited plates each day. Catering is available 7 days a week by appointment.",
       pricingHeading: "Lunch Pricing",
@@ -251,7 +257,8 @@ export const translations = {
       tagline: "La Casa del Arroz",
       description:
         "Tres generaciones de recetas familiares, traídas desde la isla a tu celebración. Catering para bodas, quinceañeras, eventos corporativos y toda ocasión en Madison, Wisconsin.",
-      orderBtn: "Pedir Almuerzo",
+      // LUNCH REMOVED: was "Pedir Almuerzo"
+      orderBtn: "Reservar Catering",
       cateringBtn: "Reservar Catering",
     },
     marquee: {
@@ -393,8 +400,11 @@ export const translations = {
       fullMenu: "Menú Completo",
       bookCatering: "Reservar Catering",
       ourStory: "Nuestra Historia",
+      // LUNCH REMOVED: orderLunch: "Pedir Almuerzo",
       orderLunch: "Pedir Almuerzo",
       lunchHours: "Horario de Almuerzo",
+      cateringLabel: "Catering",
+      cateringDays: "7 días a la semana con cita previa",
       contact: "Contacto",
       cateringAvailable: "Catering disponible 7 días a la semana con cita previa.",
       bookBtn: "Reservar Catering",
@@ -403,12 +413,14 @@ export const translations = {
       builtBy: "Creado por",
     },
     orderPage: {
-      badge: "Pedir y Reservar",
-      heading1: "Pedir Almuerzo",
-      heading2: "o Evento de Catering",
-      subtext: "Un formulario para todo. Cuéntanos qué necesitas y te contactaremos para confirmar.",
+      badge: "Reservar Catering",
+      // LUNCH REMOVED: was "Pedir Almuerzo" / "o Evento de Catering"
+      heading1: "Catering",
+      heading2: "Solicitud",
+      subtext: "Cuéntanos sobre tu evento y te contactaremos para confirmar.",
       formHeading: "¿Qué te ponemos?",
-      formSubtext: "Elige almuerzo o catering, lo hacemos todo.",
+      // LUNCH REMOVED: was "Elige almuerzo o catering, lo hacemos todo."
+      formSubtext: "Cuéntanos sobre tu evento y te contactamos pronto.",
       lunchHoursHeading: "Horario de Almuerzo",
       lunchHoursNote: "Pide antes de las 10am, platos limitados cada día. Catering disponible 7 días a la semana con cita previa.",
       pricingHeading: "Precio del Almuerzo",

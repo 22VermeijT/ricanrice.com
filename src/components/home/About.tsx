@@ -1,7 +1,5 @@
 "use client";
 
-import type { ReactNode } from "react";
-
 import AnimatedSection from "@/components/ui/AnimatedSection";
 import Link from "next/link";
 import Image from "next/image";
