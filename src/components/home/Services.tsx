@@ -131,7 +131,7 @@ export default function Services() {
 
                   {/* Background icon — large watermark */}
                   {(() => {
-                    const I = (LucideIcons as Record<string, React.ElementType>)[service.icon];
+                    const I = (LucideIcons as unknown as Record<string, React.ElementType>)[service.icon];
                     return I ? (
                       <div className="absolute -bottom-6 -right-6 opacity-10 group-hover:opacity-20 transition-opacity duration-300 pointer-events-none">
                         <I style={{ width: 160, height: 160, color: accent }} />

@@ -129,7 +129,7 @@ export default function MenuModal({ item, onClose }: Props) {
                         style={{ filter: "drop-shadow(0 10px 30px rgba(0,0,0,0.4))" }}
                       >
                         {(() => {
-                          const I = (LucideIcons as Record<string, React.ElementType>)[item.icon];
+                          const I = (LucideIcons as unknown as Record<string, React.ElementType>)[item.icon];
                           return I ? <I className="w-28 h-28 text-white opacity-80" /> : null;
                         })()}
                       </motion.div>
