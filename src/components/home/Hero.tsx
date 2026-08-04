@@ -133,10 +133,10 @@ export default function Hero() {
                 {t.hero.orderBtn}
               </Link>
               <Link
-                href="/order"
+                href="/menu"
                 className="border-2 border-white/30 hover:border-white text-white font-bold text-base px-9 py-4 transition-all duration-200 hover:-translate-y-1 hover:bg-white/10"
               >
-                {t.hero.cateringBtn}
+                {t.hero.menuBtn}
               </Link>
             </motion.div>
           </div>

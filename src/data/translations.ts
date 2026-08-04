@@ -18,6 +18,7 @@ export const translations = {
         "Three generations of family recipes, brought from the island to your celebration. Catering weddings, quinceañeras, corporate events, and every occasion across Madison, Wisconsin.",
       // LUNCH REMOVED: was "Order Lunch Now"
       orderBtn: "Book Catering",
+      menuBtn: "View Our Menu",
       cateringBtn: "Book Catering",
     },
     marquee: {
@@ -259,6 +260,7 @@ export const translations = {
         "Tres generaciones de recetas familiares, traídas desde la isla a tu celebración. Catering para bodas, quinceañeras, eventos corporativos y toda ocasión en Madison, Wisconsin.",
       // LUNCH REMOVED: was "Pedir Almuerzo"
       orderBtn: "Reservar Catering",
+      menuBtn: "Ver Menú",
       cateringBtn: "Reservar Catering",
     },
     marquee: {
