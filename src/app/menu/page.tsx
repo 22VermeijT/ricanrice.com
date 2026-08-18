@@ -3,6 +3,7 @@ import AnimatedSection from "@/components/ui/AnimatedSection";
 import MenuGrid from "@/components/menu/MenuGrid";
 import MenuHero from "@/components/menu/MenuHero";
 import MenuCTA from "@/components/menu/MenuCTA";
+import SofritoSpotlight from "@/components/home/SofritoSpotlight";
 
 export const metadata: Metadata = {
   title: "Full Menu — Authentic Puerto Rican Food Madison WI",
@@ -20,6 +21,8 @@ export default function MenuPage() {
   return (
     <div className="min-h-screen bg-white">
       <MenuHero />
+
+      <SofritoSpotlight />
 
       {/* Menu */}
       <section className="py-16 sm:py-24">

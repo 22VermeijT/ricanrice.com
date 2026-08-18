@@ -22,6 +22,7 @@ export interface MenuItem {
 
 export const menuCategories = [
   "All",
+  "Take Home",
   "Lunch Plates",
   "By the Dozen",
   "Desserts",
@@ -29,6 +30,30 @@ export const menuCategories = [
 ];
 
 export const menuItems: MenuItem[] = [
+
+  // ── TAKE HOME ─────────────────────────────────────────────────────────────
+
+  {
+    id: "rican-sofrito",
+    category: "Take Home",
+    nameEs: "Rican Sofrito",
+    nameEn: "Rican Sofrito",
+    description: "Homemade sofrito in a 16 oz jar — the same base we cook with every day. $10.",
+    descriptionEs: "Sofrito casero en frasco de 16 oz — la misma base con la que cocinamos todos los días. $10.",
+    longDescription: "Our Rican Sofrito is made in-house the same way we start every plate: fresh herbs, peppers, garlic, and love. Take a 16 oz jar home for $10 and bring the flavor of the island to your own kitchen.",
+    longDescriptionEs: "Nuestro Rican Sofrito se prepara en casa igual que empezamos cada plato: hierbas frescas, ajíes, ajo y amor. Lleva un frasco de 16 oz a casa por $10 y lleva el sabor de la isla a tu cocina.",
+    ingredients: ["Fresh herbs", "Peppers", "Garlic", "Onion", "Culantro", "Olive oil"],
+    flavorProfile: ["Aromatic", "Herbal", "Garlicky", "Fresh"],
+    spiceLevel: 1,
+    culturalContext: "Sofrito is the soul of Puerto Rican cooking — the aromatic base that goes into arroz, stews, beans, and almost every savory dish on the island.",
+    culturalContextEs: "El sofrito es el alma de la cocina puertorriqueña — la base aromática de arroces, guisos, habichuelas y casi todo plato salado de la isla.",
+    pairingSuggestions: ["Arroz con gandules", "Beans", "Stews", "Roasted meats"],
+    cateringAvailable: true,
+    dietaryNotes: ["Vegetarian", "Gluten-free"],
+    icon: "Leaf",
+    gradient: "from-green-700 to-lime-600",
+    photo: "/rican-sofrito.jpg",
+  },
 
   // ── LUNCH PLATES ──────────────────────────────────────────────────────────
 

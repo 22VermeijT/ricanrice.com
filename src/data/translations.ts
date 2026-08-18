@@ -92,6 +92,20 @@ export const translations = {
         desc: "Professional-quality Puerto Rican food delivered hot and ready to your door. Perfect for smaller gatherings where you want the food done without the fuss.",
       },
     },
+    sofrito: {
+      badge: "Take It Home",
+      heading: "Rican Sofrito",
+      tagline: "The heart of every plate",
+      description:
+        "The same homemade sofrito that starts every dish in our kitchen. Fresh herbs, peppers, and garlic — bottled so you can bring the island to your own stove.",
+      sizeLabel: "Size",
+      size: "16 oz",
+      priceLabel: "Price",
+      price: "$10",
+      cta: "Order Now",
+      note: "Mention Rican Sofrito in your catering inquiry.",
+      imageAlt: "16 oz jars of Rican Sofrito, homemade in our kitchen",
+    },
     menu: {
       badge: "La Mesa",
       heading1: "Taste the",
@@ -108,6 +122,7 @@ export const translations = {
       ctaHeading: "Bring Rican Rice to Your Event",
       ctaBtn: "Start Planning →",
       categoryNames: {
+        "Take Home": "Take Home",
         "Lunch Plates": "Lunch Plates",
         "By the Dozen": "By the Dozen",
         "Desserts": "Desserts",
@@ -334,6 +349,20 @@ export const translations = {
         desc: "Comida puertorriqueña de calidad profesional entregada caliente y lista. Perfecto para reuniones pequeñas donde quieres la comida lista sin complicaciones.",
       },
     },
+    sofrito: {
+      badge: "Llévalo a Casa",
+      heading: "Rican Sofrito",
+      tagline: "El corazón de cada plato",
+      description:
+        "El mismo sofrito casero con el que empieza cada plato en nuestra cocina. Hierbas frescas, ajíes y ajo — embotellado para que lleves la isla a tu casa.",
+      sizeLabel: "Tamaño",
+      size: "16 oz",
+      priceLabel: "Precio",
+      price: "$10",
+      cta: "Pedir Ahora",
+      note: "Menciona Rican Sofrito en tu solicitud de catering.",
+      imageAlt: "Frascos de 16 oz de Rican Sofrito, hechos en nuestra cocina",
+    },
     menu: {
       badge: "La Mesa",
       heading1: "Prueba la",
@@ -350,6 +379,7 @@ export const translations = {
       ctaHeading: "Lleva Rican Rice a Tu Evento",
       ctaBtn: "Comienza a Planificar →",
       categoryNames: {
+        "Take Home": "Para Llevar",
         "Lunch Plates": "Platos de Almuerzo",
         "By the Dozen": "Por Docena",
         "Desserts": "Postres",

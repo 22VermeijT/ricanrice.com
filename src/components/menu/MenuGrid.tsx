@@ -11,6 +11,7 @@ import { PrStar } from "@/components/ui/Illustrations";
 import { useLanguage } from "@/components/LanguageContext";
 
 const categoryColors: Record<string, { bg: string; text: string; glow: string }> = {
+  "Take Home":    { bg: "#001840", text: "white", glow: "rgba(0,24,64,0.5)" },
   "Lunch Plates": { bg: "#7A2E0E", text: "white", glow: "rgba(122,46,14,0.5)" },
   "By the Dozen": { bg: "#1A5C2A", text: "white", glow: "rgba(26,92,42,0.5)" },
   "Desserts":     { bg: "#8B4A00", text: "white", glow: "rgba(139,74,0,0.5)" },
