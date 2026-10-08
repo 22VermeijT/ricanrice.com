@@ -1,9 +1,9 @@
 "use client";
 
 import Link from "next/link";
-import { motion } from "framer-motion";
 import { useLanguage } from "@/components/LanguageContext";
 import { PrStar, HibiscusFlower, TropicalLeaf } from "@/components/ui/Illustrations";
+import Float from "@/components/ui/Float";
 import FloralCluster from "@/components/ui/FloralCluster";
 
 export default function MenuCTA() {
@@ -38,14 +38,15 @@ export default function MenuCTA() {
       </div>
 
       {/* Hibiscus — center-right area */}
-      <motion.div
+      <Float
         className="absolute right-1/3 top-1/2 -translate-y-1/2 pointer-events-none opacity-15"
-        animate={{ rotate: [-6, 6, -6], scale: [0.95, 1.05, 0.95] }}
-        transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
         style={{ filter: "drop-shadow(0 4px 16px rgba(255,255,255,0.3))" }}
+        rotate={[-6, 6]}
+        scale={[0.95, 1.05]}
+        duration={7}
       >
         <HibiscusFlower className="w-16 h-16" style={{ filter: "brightness(10)" }} />
-      </motion.div>
+      </Float>
 
       {/* Scattered stars */}
       {[

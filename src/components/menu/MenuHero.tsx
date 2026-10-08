@@ -1,9 +1,9 @@
 "use client";
 
 import Image from "next/image";
-import { motion } from "framer-motion";
 import { useLanguage } from "@/components/LanguageContext";
 import { PrStar, HibiscusFlower, TropicalLeaf, PlantainBunch } from "@/components/ui/Illustrations";
+import Float from "@/components/ui/Float";
 import FloralCluster from "@/components/ui/FloralCluster";
 
 export default function MenuHero() {
@@ -12,7 +12,7 @@ export default function MenuHero() {
   return (
     <section className="pt-36 pb-20 relative overflow-hidden">
       <Image
-        src="/pattern-bg.png"
+        src="/pattern-bg.webp"
         alt=""
         fill
         sizes="100vw"
@@ -48,33 +48,37 @@ export default function MenuHero() {
       </div>
 
       {/* Floating plantains — right edge */}
-      <motion.div
+      <Float
         className="absolute right-10 top-1/2 -translate-y-1/2 pointer-events-none opacity-40"
-        animate={{ y: [0, -10, 0], rotate: [-4, 4, -4] }}
-        transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+        y={-10}
+        rotate={[-4, 4]}
+        duration={5}
       >
         <PlantainBunch className="w-28 h-20 drop-glow-gold" />
-      </motion.div>
+      </Float>
 
       {/* Hibiscus — top right */}
-      <motion.div
+      <Float
         className="absolute top-10 right-52 pointer-events-none opacity-20"
-        animate={{ rotate: [-8, 8, -8], scale: [0.95, 1.05, 0.95] }}
-        transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
         style={{ filter: "drop-shadow(0 4px 16px rgba(232,25,44,0.5))" }}
+        rotate={[-8, 8]}
+        scale={[0.95, 1.05]}
+        duration={7}
       >
         <HibiscusFlower className="w-14 h-14" />
-      </motion.div>
+      </Float>
 
       {/* Hibiscus — bottom left */}
-      <motion.div
+      <Float
         className="absolute bottom-8 left-24 pointer-events-none opacity-15"
-        animate={{ rotate: [6, -6, 6], y: [0, -4, 0] }}
-        transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 2 }}
         style={{ filter: "drop-shadow(0 4px 12px rgba(200,149,44,0.4))" }}
+        y={-4}
+        rotate={[6, -6]}
+        duration={6}
+        delay={2}
       >
         <HibiscusFlower className="w-10 h-10" />
-      </motion.div>
+      </Float>
 
       {/* Scattered stars */}
       {[

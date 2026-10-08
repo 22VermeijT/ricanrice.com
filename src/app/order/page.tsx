@@ -7,10 +7,10 @@ import OrderSidebar from "@/components/order/OrderSidebar";
 export const metadata: Metadata = {
   title: "Order & Book Catering — Puerto Rican Catering Madison WI",
   description:
-    "Place a lunch order or book catering with Rican Rice. Authentic Puerto Rican food for weddings, corporate events, quinceañeras, and more in Madison, Wisconsin.",
+    "Book catering with Rican Rice. Authentic Puerto Rican food for weddings, corporate events, quinceañeras, and more in Madison, Wisconsin.",
   openGraph: {
     title: "Order & Book Catering — Rican Rice",
-    description: "Place a lunch order or book catering with Rican Rice. Authentic Puerto Rican food in Madison, Wisconsin.",
+    description: "Book catering with Rican Rice. Authentic Puerto Rican food in Madison, Wisconsin.",
     url: "https://ricanrice.com/order",
     images: [{ url: "/og", width: 1200, height: 630, alt: "Order Rican Rice Catering" }],
   },

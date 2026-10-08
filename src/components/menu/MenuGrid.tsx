@@ -87,7 +87,7 @@ function MenuCard({ item, onClick, index }: MenuCardProps) {
         {/* Catering badge — always shown */}
         {item.cateringAvailable && (
           <div className="absolute bottom-3 left-3">
-            <span className="text-[9px] font-bold bg-white/20 text-white px-2 py-0.5 border border-white/30 tracking-widest uppercase backdrop-blur-sm">
+            <span className="text-[9px] font-bold bg-black/40 text-white px-2 py-0.5 border border-white/30 tracking-widest uppercase">
               ✓ {t.menu.cateringBadge}
             </span>
           </div>

@@ -8,6 +8,7 @@ import { services } from "@/data/services";
 import { ArrowRight } from "lucide-react";
 import * as LucideIcons from "lucide-react";
 import { PrStar, HibiscusFlower, TropicalLeaf } from "@/components/ui/Illustrations";
+import Float from "@/components/ui/Float";
 import FloralCluster from "@/components/ui/FloralCluster";
 import { useLanguage } from "@/components/LanguageContext";
 
@@ -57,14 +58,15 @@ export default function Services() {
       </div>
 
       {/* Hibiscus — top accent */}
-      <motion.div
+      <Float
         className="absolute top-10 left-28 pointer-events-none opacity-15"
-        animate={{ rotate: [-8, 8, -8], scale: [0.95, 1.05, 0.95] }}
-        transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
         style={{ filter: "drop-shadow(0 4px 16px rgba(232,25,44,0.5))" }}
+        rotate={[-8, 8]}
+        scale={[0.95, 1.05]}
+        duration={7}
       >
         <HibiscusFlower className="w-14 h-14" />
-      </motion.div>
+      </Float>
 
 {/* Scattered stars */}
       {[
@@ -184,14 +186,15 @@ export default function Services() {
               <PrStar size={400} color="white" opacity={0.05} />
             </div>
             {/* Hibiscus — right side decoration */}
-            <motion.div
+            <Float
               className="absolute right-48 top-1/2 -translate-y-1/2 pointer-events-none opacity-20"
-              animate={{ rotate: [-6, 6, -6], scale: [0.95, 1.05, 0.95] }}
-              transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
               style={{ filter: "drop-shadow(0 4px 16px rgba(255,255,255,0.3))" }}
+              rotate={[-6, 6]}
+              scale={[0.95, 1.05]}
+              duration={6}
             >
               <HibiscusFlower className="w-16 h-16" style={{ filter: "brightness(10)" }} />
-            </motion.div>
+            </Float>
 <div className="relative z-10">
               <h3
                 className="text-2xl font-bold text-white mb-1"

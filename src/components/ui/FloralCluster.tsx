@@ -1,6 +1,4 @@
-"use client";
-
-import { motion } from "framer-motion";
+import Float from "./Float";
 import { HibiscusFlower, TropicalLeaf } from "./Illustrations";
 
 type FloralItem = {
@@ -95,25 +93,18 @@ export default function FloralCluster({
       {cluster.items.map((item, i) => {
         const leafH = Math.round(item.size * 1.35);
         return (
-          <motion.div
+          <Float
             key={i}
             style={{
               position: "absolute",
               top: item.top,
               left: item.left,
               opacity: item.opacity,
-              rotate: item.rotate,
             }}
-            animate={{
-              y: [0, -item.amp, 0],
-              rotate: [item.rotate - 4, item.rotate + 4, item.rotate - 4],
-            }}
-            transition={{
-              duration: item.dur,
-              delay: item.delay,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
+            y={-item.amp}
+            rotate={[item.rotate - 4, item.rotate + 4]}
+            duration={item.dur}
+            delay={item.delay}
           >
             {item.type === "hibiscus" ? (
               <HibiscusFlower
@@ -132,7 +123,7 @@ export default function FloralCluster({
                 }}
               />
             )}
-          </motion.div>
+          </Float>
         );
       })}
     </div>

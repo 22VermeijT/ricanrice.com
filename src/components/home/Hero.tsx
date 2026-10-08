@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { PrStar, PlantainBunch, HibiscusFlower, TropicalLeaf } from "@/components/ui/Illustrations";
+import Float from "@/components/ui/Float";
 import FloralCluster from "@/components/ui/FloralCluster";
 import { useLanguage } from "@/components/LanguageContext";
 
@@ -153,23 +154,25 @@ export default function Hero() {
               style={{ background: "radial-gradient(circle at 50% 50%, rgba(200,149,44,0.18) 0%, rgba(232,25,44,0.1) 40%, transparent 70%)" }}
             />
 
-            <motion.div
-              animate={{ y: [0, -12, 0] }}
-              transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+            <Float
               className="relative z-10 w-[400px] h-[400px] rounded-full overflow-hidden"
               style={{ boxShadow: "0 0 60px rgba(200,149,44,0.5), 0 0 120px rgba(200,149,44,0.2), 0 30px 80px rgba(0,0,0,0.5)" }}
+              y={-12}
+              duration={5}
             >
               <Image src="/logo.png" alt="Rican Rice" fill priority className="object-cover scale-[1.1]" />
-            </motion.div>
+            </Float>
 
-            <motion.div
+            <Float
               className="absolute -top-4 left-4 z-20"
-              animate={{ y: [0, -10, 0], rotate: [-5, 5, -5] }}
-              transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut", delay: 0.8 }}
               style={{ filter: "drop-shadow(0 8px 20px rgba(0,0,0,0.4))" }}
+              y={-10}
+              rotate={[-5, 5]}
+              duration={4.5}
+              delay={0.8}
             >
               <PlantainBunch className="w-28 h-20" />
-            </motion.div>
+            </Float>
 
             <FloralCluster variant="C" className="absolute -top-4 -right-4 z-20" glowColor="rgba(232,25,44,0.5)" />
 
@@ -179,26 +182,29 @@ export default function Hero() {
               { top: "40%", right: "-2%", size: 14, delay: 0.8 },
               { top: "85%", left: "35%", size: 16, delay: 1.2 },
             ].map((s, i) => (
-              <motion.div
+              <Float
                 key={i}
                 className="absolute pointer-events-none"
                 style={{ top: s.top, left: "left" in s ? s.left : undefined, right: "right" in s ? s.right : undefined }}
-                animate={{ opacity: [0.3, 0.9, 0.3], scale: [0.9, 1.1, 0.9] }}
-                transition={{ duration: 3 + i * 0.5, repeat: Infinity, ease: "easeInOut", delay: s.delay }}
+                scale={[0.9, 1.1]}
+                opacity={[0.3, 0.9]}
+                duration={3 + i * 0.5}
+                delay={s.delay}
               >
                 <PrStar size={s.size} color="#C8952C" className="drop-glow-gold" />
-              </motion.div>
+              </Float>
             ))}
 
             {/* Hibiscus — top-left of logo */}
-            <motion.div
+            <Float
               className="absolute -top-2 left-8 z-20 pointer-events-none"
-              animate={{ rotate: [-6, 6, -6], y: [0, -6, 0] }}
-              transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
               style={{ filter: "drop-shadow(0 4px 16px rgba(232,25,44,0.5))" }}
+              y={-6}
+              rotate={[-6, 6]}
+              duration={6}
             >
               <HibiscusFlower className="w-14 h-14 opacity-80" />
-            </motion.div>
+            </Float>
 
 {/* LUNCH REMOVED: lunch availability badge
             <motion.div
@@ -220,7 +226,7 @@ export default function Hero() {
       </div>{/* end max-w-7xl */}
 
       {/* Stats marquee — inside hero, above wave */}
-      <div className="relative z-10 overflow-hidden border-t border-white/10 py-4 mb-[70px] bg-black/20 backdrop-blur-sm">
+      <div className="relative z-10 overflow-hidden border-t border-white/10 py-4 mb-[70px] bg-black/35">
         <div className="flex whitespace-nowrap" style={{ animation: "marquee 22s linear infinite" }}>
           {[...Array(4)].map((_, copy) =>
             [

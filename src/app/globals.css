@@ -61,3 +61,28 @@ body {
   from { transform: translateX(0); }
   to   { transform: translateX(-50%); }
 }
+
+/* Decorative float — transform/opacity only so it stays on the compositor */
+@keyframes rr-float {
+  0%, 100% { transform: translateY(0) rotate(var(--r0, 0deg)) scale(var(--s0, 1)); }
+  50%      { transform: translateY(var(--y, 0px)) rotate(var(--r1, 0deg)) scale(var(--s1, 1)); }
+}
+@keyframes rr-twinkle {
+  0%, 100% { opacity: var(--o0, 1); transform: scale(var(--s0, 1)); }
+  50%      { opacity: var(--o1, 1); transform: scale(var(--s1, 1)); }
+}
+.rr-float,
+.rr-twinkle {
+  animation-duration: var(--dur, 6s);
+  animation-delay: var(--delay, 0s);
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  will-change: transform;
+}
+.rr-float   { animation-name: rr-float; }
+.rr-twinkle { animation-name: rr-twinkle; }
+
+@media (prefers-reduced-motion: reduce) {
+  .rr-float,
+  .rr-twinkle { animation: none; }
+}

@@ -8,10 +8,10 @@ import SofritoSpotlight from "@/components/home/SofritoSpotlight";
 export const metadata: Metadata = {
   title: "Full Menu — Authentic Puerto Rican Food Madison WI",
   description:
-    "Explore our full menu of authentic Puerto Rican dishes — arroz con gandules, pernil, mofongo, pasteles, and more. Available for catering and lunch delivery in Madison, Wisconsin.",
+    "Explore our full menu of authentic Puerto Rican dishes — arroz con gandules, pernil, mofongo, pasteles, and more. Available for catering in Madison, Wisconsin.",
   openGraph: {
     title: "Full Menu — Rican Rice | Authentic Puerto Rican Food Madison WI",
-    description: "Explore our full menu of authentic Puerto Rican dishes. Available for catering and lunch delivery in Madison, Wisconsin.",
+    description: "Explore our full menu of authentic Puerto Rican dishes. Available for catering in Madison, Wisconsin.",
     url: "https://ricanrice.com/menu",
     images: [{ url: "/og", width: 1200, height: 630, alt: "Rican Rice Full Menu" }],
   },

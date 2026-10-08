@@ -5,6 +5,7 @@ import AnimatedSection from "@/components/ui/AnimatedSection";
 import { motion } from "framer-motion";
 import { Clock, MapPin, Phone } from "lucide-react";
 import { PrStar, PlantainBunch, HibiscusFlower } from "@/components/ui/Illustrations";
+import Float from "@/components/ui/Float";
 import FloralCluster from "@/components/ui/FloralCluster";
 import { useLanguage } from "@/components/LanguageContext";
 
@@ -26,7 +27,7 @@ export default function Ordering() {
     <section id="ordering" className="py-24 sm:py-32 relative overflow-hidden">
       {/* Pattern texture */}
       <Image
-        src="/pattern-bg.png"
+        src="/pattern-bg.webp"
         alt=""
         fill
         sizes="100vw"
@@ -50,20 +51,22 @@ export default function Ordering() {
       </div>
 
       {/* Floating plantains */}
-      <motion.div
+      <Float
         className="absolute right-8 top-16 pointer-events-none opacity-60 z-10"
-        animate={{ y: [0, -12, 0], rotate: [-5, 5, -5] }}
-        transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+        y={-12}
+        rotate={[-5, 5]}
+        duration={5}
       >
         <PlantainBunch className="w-32 h-24 drop-glow-gold" />
-      </motion.div>
-      <motion.div
+      </Float>
+      <Float
         className="absolute left-4 bottom-16 pointer-events-none opacity-30 scale-x-[-1] z-10"
-        animate={{ y: [0, 8, 0] }}
-        transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+        y={8}
+        duration={4}
+        delay={1}
       >
         <PlantainBunch className="w-24 h-18" />
-      </motion.div>
+      </Float>
 
       {/* Floral clusters */}
       <FloralCluster
@@ -79,20 +82,23 @@ export default function Ordering() {
       />
 
       {/* Hibiscus flowers — white-tinted sides */}
-      <motion.div
+      <Float
         className="absolute left-6 top-1/2 -translate-y-1/2 pointer-events-none opacity-15 z-10"
-        animate={{ rotate: [-12, 12, -12], scale: [0.9, 1.05, 0.9] }}
-        transition={{ duration: 9, repeat: Infinity, ease: "easeInOut" }}
+        rotate={[-12, 12]}
+        scale={[0.9, 1.05]}
+        duration={9}
       >
         <HibiscusFlower className="w-24 h-24" style={{ filter: "brightness(10)" }} />
-      </motion.div>
-      <motion.div
+      </Float>
+      <Float
         className="absolute right-6 top-1/3 pointer-events-none opacity-12 z-10"
-        animate={{ rotate: [10, -10, 10], y: [0, -8, 0] }}
-        transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+        y={-8}
+        rotate={[10, -10]}
+        duration={7}
+        delay={2}
       >
         <HibiscusFlower className="w-20 h-20" style={{ filter: "brightness(10)" }} />
-      </motion.div>
+      </Float>
 
       {/* Star accents */}
       {[

@@ -2,10 +2,10 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
 import AnimatedSection from "@/components/ui/AnimatedSection";
 import MenuGrid from "@/components/menu/MenuGrid";
 import { PrStar, HibiscusFlower } from "@/components/ui/Illustrations";
+import Float from "@/components/ui/Float";
 import FloralCluster from "@/components/ui/FloralCluster";
 import { useLanguage } from "@/components/LanguageContext";
 
@@ -16,7 +16,7 @@ export default function FeaturedMenu() {
     <section id="menu" className="py-24 sm:py-32 relative overflow-hidden">
       {/* Light toile pattern */}
       <Image
-        src="/pattern-light.png"
+        src="/pattern-light.webp"
         alt=""
         fill
         sizes="100vw"
@@ -45,24 +45,27 @@ export default function FeaturedMenu() {
       />
 
       {/* Hibiscus — top-left */}
-      <motion.div
+      <Float
         className="absolute top-8 left-6 pointer-events-none opacity-30 z-10"
-        animate={{ rotate: [-10, 10, -10], scale: [0.9, 1.05, 0.9] }}
-        transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
         style={{ filter: "drop-shadow(0 4px 16px rgba(232,25,44,0.3))" }}
+        rotate={[-10, 10]}
+        scale={[0.9, 1.05]}
+        duration={8}
       >
         <HibiscusFlower className="w-20 h-20" />
-      </motion.div>
+      </Float>
 
       {/* Hibiscus — bottom-left, smaller */}
-      <motion.div
+      <Float
         className="absolute bottom-12 left-16 pointer-events-none opacity-20 z-10"
-        animate={{ rotate: [8, -8, 8], y: [0, -5, 0] }}
-        transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 1.5 }}
         style={{ filter: "drop-shadow(0 4px 12px rgba(200,149,44,0.2))" }}
+        y={-5}
+        rotate={[8, -8]}
+        duration={6}
+        delay={1.5}
       >
         <HibiscusFlower className="w-12 h-12" />
-      </motion.div>
+      </Float>
 
 <div className="relative z-10 max-w-7xl mx-auto px-8 sm:px-12">
         {/* Header */}

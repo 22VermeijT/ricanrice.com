@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { PrStar, HibiscusFlower, TropicalLeaf } from "@/components/ui/Illustrations";
+import Float from "@/components/ui/Float";
 import FloralCluster from "@/components/ui/FloralCluster";
 
 export default function NotFound() {
@@ -38,22 +39,25 @@ export default function NotFound() {
       </div>
 
       {/* Hibiscus */}
-      <motion.div
+      <Float
         className="absolute top-12 left-24 pointer-events-none opacity-15"
-        animate={{ rotate: [-8, 8, -8], scale: [0.95, 1.05, 0.95] }}
-        transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
         style={{ filter: "drop-shadow(0 4px 16px rgba(232,25,44,0.5))" }}
+        rotate={[-8, 8]}
+        scale={[0.95, 1.05]}
+        duration={7}
       >
         <HibiscusFlower className="w-14 h-14" />
-      </motion.div>
-      <motion.div
+      </Float>
+      <Float
         className="absolute bottom-20 right-24 pointer-events-none opacity-12"
-        animate={{ rotate: [6, -6, 6], y: [0, -5, 0] }}
-        transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 2 }}
         style={{ filter: "drop-shadow(0 4px 12px rgba(200,149,44,0.3))" }}
+        y={-5}
+        rotate={[6, -6]}
+        duration={6}
+        delay={2}
       >
         <HibiscusFlower className="w-10 h-10" />
-      </motion.div>
+      </Float>
 
       {/* Scattered stars */}
       {[

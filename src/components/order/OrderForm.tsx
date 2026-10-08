@@ -6,6 +6,7 @@ import { motion, AnimatePresence } from "framer-motion";
 // LUNCH REMOVED: UtensilsCrossed, PartyPopper were used for the lunch/catering toggle
 import { CheckCircle, ChevronDown, Loader2, Send, Info } from "lucide-react";
 import { useLanguage } from "@/components/LanguageContext";
+import { formatPhone } from "@/lib/formatPhone";
 
 // LUNCH REMOVED: "lunch" type kept for easy restoration
 type OrderType = /* "lunch" | */ "catering";
@@ -31,14 +32,6 @@ const inputClass =
   "w-full bg-white border border-gray-200 text-[#1C1C1E] px-4 py-3.5 text-sm placeholder-[#6E6E73]/60 focus:outline-none focus:border-[#001435] focus:ring-2 focus:ring-[#001435]/10 transition-all duration-200";
 
 const labelClass = "block text-sm font-semibold text-[#1C1C1E] mb-2";
-
-function formatPhone(raw: string): string {
-  const digits = raw.replace(/\D/g, "").slice(0, 10);
-  if (digits.length === 0) return "";
-  if (digits.length < 4) return `(${digits}`;
-  if (digits.length < 7) return `(${digits.slice(0, 3)}) ${digits.slice(3)}`;
-  return `(${digits.slice(0, 3)}) ${digits.slice(3, 6)}-${digits.slice(6)}`;
-}
 
 function formatDate(raw: string): string {
   const digits = raw.replace(/\D/g, "").slice(0, 8);

@@ -2,9 +2,9 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
 import AnimatedSection from "@/components/ui/AnimatedSection";
 import { PrStar, HibiscusFlower } from "@/components/ui/Illustrations";
+import Float from "@/components/ui/Float";
 import FloralCluster from "@/components/ui/FloralCluster";
 import { useLanguage } from "@/components/LanguageContext";
 
@@ -30,14 +30,15 @@ export default function SofritoSpotlight() {
         glowColor="rgba(200,149,44,0.3)"
       />
 
-      <motion.div
+      <Float
         className="absolute top-10 left-8 pointer-events-none opacity-25 z-10"
-        animate={{ rotate: [-8, 8, -8], scale: [0.95, 1.05, 0.95] }}
-        transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
         style={{ filter: "drop-shadow(0 4px 16px rgba(232,25,44,0.3))" }}
+        rotate={[-8, 8]}
+        scale={[0.95, 1.05]}
+        duration={8}
       >
         <HibiscusFlower className="w-14 h-14" />
-      </motion.div>
+      </Float>
 
       <div className="relative z-10 max-w-7xl mx-auto px-8 sm:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 overflow-hidden border border-[#001840]/10 shadow-[0_24px_80px_rgba(0,20,53,0.12)]">

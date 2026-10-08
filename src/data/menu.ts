@@ -76,7 +76,7 @@ export const menuItems: MenuItem[] = [
     dietaryNotes: ["Gluten-free"],
     icon: "Utensils",
     gradient: "from-amber-700 to-yellow-600",
-    photo: "/arroz-gandules-cerdo-amarillos.png",
+    photo: "/arroz-gandules-cerdo-amarillos.webp",
   },
 
   {
@@ -98,7 +98,7 @@ export const menuItems: MenuItem[] = [
     dietaryNotes: ["Gluten-free"],
     icon: "UtensilsCrossed",
     gradient: "from-orange-700 to-amber-600",
-    photo: "/pollo-horneado-pan-ajo-papa.png",
+    photo: "/pollo-horneado-pan-ajo-papa.webp",
   },
 
   {
@@ -120,7 +120,7 @@ export const menuItems: MenuItem[] = [
     dietaryNotes: ["Gluten-free"],
     icon: "Beef",
     gradient: "from-amber-800 to-yellow-700",
-    photo: "/chuletas-can-can.png",
+    photo: "/chuletas-can-can.webp",
   },
 
   {
@@ -142,7 +142,7 @@ export const menuItems: MenuItem[] = [
     dietaryNotes: ["Gluten-free", "Dairy-free"],
     icon: "Fish",
     gradient: "from-blue-800 to-cyan-700",
-    photo: "/arroz-calamares-habichuelas.png",
+    photo: "/arroz-calamares-habichuelas.webp",
   },
 
   {
@@ -164,7 +164,7 @@ export const menuItems: MenuItem[] = [
     dietaryNotes: ["Dairy-free"],
     icon: "UtensilsCrossed",
     gradient: "from-red-800 to-orange-700",
-    photo: "/arroz-spaghetti-meatballs.png",
+    photo: "/arroz-spaghetti-meatballs.webp",
   },
 
   {
@@ -186,7 +186,7 @@ export const menuItems: MenuItem[] = [
     dietaryNotes: ["Gluten-free"],
     icon: "Utensils",
     gradient: "from-yellow-800 to-amber-600",
-    photo: "/pastelon.png",
+    photo: "/pastelon.webp",
   },
 
   {
@@ -208,7 +208,7 @@ export const menuItems: MenuItem[] = [
     dietaryNotes: ["Gluten-free", "Dairy-free"],
     icon: "Beef",
     gradient: "from-red-950 to-amber-900",
-    photo: "/bistec-encebollado.png",
+    photo: "/bistec-encebollado.webp",
   },
 
   {
@@ -230,7 +230,7 @@ export const menuItems: MenuItem[] = [
     dietaryNotes: ["Gluten-free", "Dairy-free"],
     icon: "Fish",
     gradient: "from-rose-800 to-pink-600",
-    photo: "/arroz-camarones-kingcrab.png",
+    photo: "/arroz-camarones-kingcrab.webp",
   },
 
   {
@@ -252,7 +252,7 @@ export const menuItems: MenuItem[] = [
     dietaryNotes: ["Dairy-free"],
     icon: "UtensilsCrossed",
     gradient: "from-orange-800 to-amber-700",
-    photo: "/pollo-frito-habichuelas-negras.png",
+    photo: "/pollo-frito-habichuelas-negras.webp",
   },
 
   {
@@ -274,7 +274,7 @@ export const menuItems: MenuItem[] = [
     dietaryNotes: ["Gluten-free", "Vegetarian"],
     icon: "Utensils",
     gradient: "from-yellow-700 to-amber-500",
-    photo: "/arroz-pastelon-rositas.png",
+    photo: "/arroz-pastelon-rositas.webp",
   },
 
   {
@@ -296,7 +296,7 @@ export const menuItems: MenuItem[] = [
     dietaryNotes: ["Gluten-free"],
     icon: "Star",
     gradient: "from-amber-600 to-yellow-500",
-    photo: "/piononos-rositas.png",
+    photo: "/piononos-rositas.webp",
   },
 
   {
@@ -318,7 +318,7 @@ export const menuItems: MenuItem[] = [
     dietaryNotes: ["Gluten-free", "Dairy-free"],
     icon: "Soup",
     gradient: "from-green-900 to-emerald-700",
-    photo: "/guineitos-mollejas.png",
+    photo: "/guineitos-mollejas.webp",
   },
 
   {
@@ -340,7 +340,7 @@ export const menuItems: MenuItem[] = [
     dietaryNotes: ["Gluten-free"],
     icon: "Utensils",
     gradient: "from-amber-800 to-orange-700",
-    photo: "/pastelon-carne-molida.png",
+    photo: "/pastelon-carne-molida.webp",
   },
 
   // ── BY THE DOZEN ──────────────────────────────────────────────────────────
@@ -364,7 +364,7 @@ export const menuItems: MenuItem[] = [
     dietaryNotes: ["Gluten-free", "Dairy-free"],
     icon: "LeafyGreen",
     gradient: "from-green-900 to-emerald-700",
-    photo: "/pasteles-yuca.png",
+    photo: "/pasteles-yuca.webp",
   },
 
   {
@@ -386,7 +386,7 @@ export const menuItems: MenuItem[] = [
     dietaryNotes: ["Gluten-free", "Dairy-free"],
     icon: "LeafyGreen",
     gradient: "from-green-800 to-green-600",
-    photo: "/pasteles-guineo.png",
+    photo: "/pasteles-guineo.webp",
   },
 
   {
@@ -408,7 +408,7 @@ export const menuItems: MenuItem[] = [
     dietaryNotes: ["Gluten-free"],
     icon: "UtensilsCrossed",
     gradient: "from-amber-900 to-yellow-800",
-    photo: "/alcapurrias.png",
+    photo: "/alcapurrias.webp",
   },
 
   {
@@ -476,7 +476,7 @@ export const menuItems: MenuItem[] = [
     dietaryNotes: ["Gluten-free", "Vegetarian"],
     icon: "Star",
     gradient: "from-amber-500 to-yellow-400",
-    photo: "/flan-vainilla-queso.png",
+    photo: "/flan-vainilla-queso.webp",
   },
 
   {
@@ -498,7 +498,7 @@ export const menuItems: MenuItem[] = [
     dietaryNotes: ["Vegetarian"],
     icon: "Star",
     gradient: "from-amber-200 to-yellow-100",
-    photo: "/bizcocho-almendras.png",
+    photo: "/bizcocho-almendras.webp",
   },
 
   // ── SIDES ─────────────────────────────────────────────────────────────────
@@ -522,6 +522,6 @@ export const menuItems: MenuItem[] = [
     dietaryNotes: ["Vegetarian", "Gluten-free"],
     icon: "Utensils",
     gradient: "from-stone-600 to-stone-400",
-    photo: "/pure-papas-mayonesa.png",
+    photo: "/pure-papas-mayonesa.webp",
   },
 ];

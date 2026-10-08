@@ -6,6 +6,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { Utensils, TreePalm, Heart, PartyPopper } from "lucide-react";
 import { PrStar, HibiscusFlower, TropicalLeaf } from "@/components/ui/Illustrations";
+import Float from "@/components/ui/Float";
 import FloralCluster from "@/components/ui/FloralCluster";
 import { useLanguage } from "@/components/LanguageContext";
 
@@ -36,14 +37,15 @@ export default function About() {
       </div>
 
       {/* Hibiscus — top right accent */}
-      <motion.div
+      <Float
         className="absolute top-12 right-28 pointer-events-none opacity-60"
-        animate={{ rotate: [-8, 8, -8], scale: [0.95, 1.05, 0.95] }}
-        transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
         style={{ filter: "drop-shadow(0 4px 20px rgba(232,25,44,0.45))" }}
+        rotate={[-8, 8]}
+        scale={[0.95, 1.05]}
+        duration={7}
       >
         <HibiscusFlower className="w-16 h-16" />
-      </motion.div>
+      </Float>
 
       {/* Floral clusters */}
       <FloralCluster
@@ -83,7 +85,7 @@ export default function About() {
                   { bottom: "20%", left: "12%", size: 16, delay: 1.2 },
                   { bottom: "30%", right: "8%", size: 24, delay: 0.3 },
                 ].map((s, i) => (
-                  <motion.div
+                  <Float
                     key={i}
                     className="absolute pointer-events-none"
                     style={{
@@ -92,11 +94,13 @@ export default function About() {
                       left: "left" in s ? s.left : undefined,
                       right: "right" in s ? s.right : undefined,
                     }}
-                    animate={{ opacity: [0.2, 0.7, 0.2], scale: [0.9, 1.1, 0.9] }}
-                    transition={{ duration: 4 + i * 0.4, repeat: Infinity, ease: "easeInOut", delay: s.delay }}
+                    scale={[0.9, 1.1]}
+                    opacity={[0.2, 0.7]}
+                    duration={4 + i * 0.4}
+                    delay={s.delay}
                   >
                     <PrStar size={s.size} color="#C8952C" className="drop-glow-gold" />
-                  </motion.div>
+                  </Float>
                 ))}
 
                 {/* Food photo — no overlays */}

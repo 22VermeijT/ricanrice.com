@@ -4,7 +4,8 @@ import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import StickyOrderCTA from "@/components/ui/StickyOrderCTA";
-import RestaurantComingSoonBanner from "@/components/ui/RestaurantComingSoonBanner";
+// RESTAURANT BANNER REMOVED: import RestaurantComingSoonBanner from "@/components/ui/RestaurantComingSoonBanner";
+import ThanksgivingBanner from "@/components/ui/ThanksgivingBanner";
 import { LanguageProvider } from "@/components/LanguageContext";
 
 const playfair = Playfair_Display({
@@ -78,14 +79,6 @@ const jsonLd = {
   },
   servesCuisine: "Puerto Rican",
   priceRange: "$$",
-  openingHoursSpecification: [
-    {
-      "@type": "OpeningHoursSpecification",
-      dayOfWeek: ["Monday", "Wednesday", "Friday"],
-      opens: "11:00",
-      closes: "14:00",
-    },
-  ],
   sameAs: [
     "https://www.facebook.com/profile.php?id=61567520785285",
   ],
@@ -110,7 +103,8 @@ export default function RootLayout({
       <body>
         <LanguageProvider>
           <Header />
-          <RestaurantComingSoonBanner />
+          {/* RESTAURANT BANNER REMOVED: <RestaurantComingSoonBanner /> */}
+          <ThanksgivingBanner />
           <main>{children}</main>
           <Footer />
           <StickyOrderCTA />
