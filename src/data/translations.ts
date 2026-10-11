@@ -56,6 +56,12 @@ export const translations = {
       saturday: "Saturday",
       sunday: "Sunday",
     },
+    pricing: {
+      label: "Catering & single plates",
+      from: "starting at",
+      price: "$14.99",
+      unit: "per plate",
+    },
     services: {
       badge: "What We Do",
       heading1: "We Cater",
@@ -381,6 +387,12 @@ export const translations = {
       friday: "Viernes",
       saturday: "Sábado",
       sunday: "Domingo",
+    },
+    pricing: {
+      label: "Catering y platos individuales",
+      from: "desde",
+      price: "$14.99",
+      unit: "por plato",
     },
     services: {
       badge: "Lo Que Hacemos",

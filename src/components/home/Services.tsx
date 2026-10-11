@@ -10,6 +10,7 @@ import * as LucideIcons from "lucide-react";
 import { PrStar, HibiscusFlower, TropicalLeaf } from "@/components/ui/Illustrations";
 import Float from "@/components/ui/Float";
 import FloralCluster from "@/components/ui/FloralCluster";
+import PriceBadge from "@/components/ui/PriceBadge";
 import { useLanguage } from "@/components/LanguageContext";
 
 const cardColors = [
@@ -104,9 +105,12 @@ export default function Services() {
             </h2>
           </AnimatedSection>
           <AnimatedSection direction="right">
-            <p className="text-white/40 text-base leading-relaxed max-w-xs sm:text-right">
+            <p className="text-white/40 text-base leading-relaxed max-w-xs sm:text-right sm:ml-auto">
               {t.services.subtext}
             </p>
+            <div className="mt-5 sm:text-right">
+              <PriceBadge />
+            </div>
           </AnimatedSection>
         </div>
 

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -15,6 +15,24 @@ export default function ThanksgivingBanner() {
   const pathname = usePathname();
   const { t } = useLanguage();
   const tg = t.thanksgiving;
+  const bannerRef = useRef<HTMLDivElement>(null);
+  const visible = !dismissed && pathname !== "/thanksgiving";
+
+  // The banner is fixed, so reserve its height at the top of the page to keep it from covering content.
+  useEffect(() => {
+    const el = bannerRef.current;
+    if (!visible || !el) return;
+    const apply = () => {
+      document.body.style.paddingTop = `${el.offsetHeight}px`;
+    };
+    apply();
+    const observer = new ResizeObserver(apply);
+    observer.observe(el);
+    return () => {
+      observer.disconnect();
+      document.body.style.paddingTop = "";
+    };
+  }, [visible]);
 
   useEffect(() => {
     if (!flyerOpen) return;
@@ -28,11 +46,12 @@ export default function ThanksgivingBanner() {
     };
   }, [flyerOpen]);
 
-  if (dismissed || pathname === "/thanksgiving") return null;
+  if (!visible) return null;
 
   return (
     <>
       <div
+        ref={bannerRef}
         className="fixed top-[73px] left-0 right-0 z-[45] bg-[#6B2E1F] border-b border-[#C8952C]/40"
         style={{ boxShadow: "0 4px 20px rgba(0,0,0,0.25)" }}
       >

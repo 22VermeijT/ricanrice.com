@@ -5,6 +5,7 @@ import { useLanguage } from "@/components/LanguageContext";
 import { PrStar, HibiscusFlower, TropicalLeaf, PlantainBunch } from "@/components/ui/Illustrations";
 import Float from "@/components/ui/Float";
 import FloralCluster from "@/components/ui/FloralCluster";
+import PriceBadge from "@/components/ui/PriceBadge";
 
 export default function MenuHero() {
   const { t } = useLanguage();
@@ -114,6 +115,7 @@ export default function MenuHero() {
         <p className="text-white/50 text-lg mt-6 max-w-xl">
           {t.menu.pageSubtext}
         </p>
+        <PriceBadge className="mt-6" />
       </div>
     </section>
   );
