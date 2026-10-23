@@ -4,8 +4,7 @@ import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import StickyOrderCTA from "@/components/ui/StickyOrderCTA";
-// RESTAURANT BANNER REMOVED: import RestaurantComingSoonBanner from "@/components/ui/RestaurantComingSoonBanner";
-import ThanksgivingBanner from "@/components/ui/ThanksgivingBanner";
+import AnnouncementBanner from "@/components/ui/AnnouncementBanner";
 import { LanguageProvider } from "@/components/LanguageContext";
 
 const playfair = Playfair_Display({
@@ -103,8 +102,7 @@ export default function RootLayout({
       <body>
         <LanguageProvider>
           <Header />
-          {/* RESTAURANT BANNER REMOVED: <RestaurantComingSoonBanner /> */}
-          <ThanksgivingBanner />
+          <AnnouncementBanner />
           <main>{children}</main>
           <Footer />
           <StickyOrderCTA />
