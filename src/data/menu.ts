@@ -1,3 +1,17 @@
+export interface TraySize {
+  label: string;
+  labelEs: string;
+  price: string;
+  serves?: string;
+  servesEs?: string;
+}
+
+export interface TrayPricing {
+  intro?: string;
+  introEs?: string;
+  sizes: TraySize[];
+}
+
 export interface MenuItem {
   id: string;
   category: string;
@@ -18,11 +32,13 @@ export interface MenuItem {
   icon: string;
   gradient: string;
   photo?: string;
+  trayPricing?: TrayPricing;
 }
 
 export const menuCategories = [
   "All",
   "Take Home",
+  "Catering Trays",
   "Lunch Plates",
   "By the Dozen",
   "Desserts",
@@ -53,6 +69,267 @@ export const menuItems: MenuItem[] = [
     icon: "Leaf",
     gradient: "from-green-700 to-lime-600",
     photo: "/rican-sofrito.jpg",
+  },
+
+  // ── CATERING TRAYS ────────────────────────────────────────────────────────
+
+  {
+    id: "tray-arroz-gandules",
+    category: "Catering Trays",
+    nameEs: "Arroz Mezclado con Gandules",
+    nameEn: "Rice Mixed with Gandules",
+    description: "Sofrito rice with pigeon peas — or another rice style you prefer. Seafood rice quoted separately.",
+    descriptionEs: "Arroz con sofrito y gandules — u otro estilo de arroz que prefieras. El arroz de mariscos se cotiza aparte.",
+    longDescription: "Our signature arroz mezclado with gandules (pigeon peas), built for catering trays. Prefer another rice style? We can usually accommodate — except rice with shrimp, squid, or crab, which is priced differently; please call for a quote. Add pork meat for a fuller tray.",
+    longDescriptionEs: "Nuestro arroz mezclado con gandules, preparado en bandejas de catering. ¿Prefieres otro estilo de arroz? Por lo general podemos acomodarlo — excepto arroz con camarones, calamares o cangrejo, que se cotiza distinto; llama para una cotización. Agrega carne de cerdo para una bandeja más completa.",
+    ingredients: ["Seasoned rice", "Pigeon peas (gandules)", "Sofrito", "Optional pork"],
+    flavorProfile: ["Savory", "Aromatic", "Hearty", "Comforting"],
+    spiceLevel: 1,
+    culturalContext: "Arroz con gandules is Puerto Rico's national dish — the centerpiece of every celebration table, from Sunday lunch to holiday feasts.",
+    culturalContextEs: "El arroz con gandules es el plato nacional de Puerto Rico — el centro de toda mesa de celebración, desde el almuerzo del domingo hasta las fiestas.",
+    pairingSuggestions: ["Roasted pork", "Roasted chicken", "Potato salad", "Elbow salad"],
+    cateringAvailable: true,
+    dietaryNotes: ["Gluten-free"],
+    icon: "Utensils",
+    gradient: "from-amber-700 to-yellow-600",
+    photo: "/arroz-gandules-cerdo-amarillos.webp",
+    trayPricing: {
+      intro: "Other rice styles available (except shrimp, squid, or crab — please call for a quote).",
+      introEs: "Otros estilos de arroz disponibles (excepto camarones, calamares o cangrejo — llama para cotización).",
+      sizes: [
+        { label: "Large", labelEs: "Grande", price: "$110", serves: "Serves 40–50", servesEs: "Para 40–50" },
+        { label: "Large with pork", labelEs: "Grande con cerdo", price: "$145", serves: "Serves 40–50", servesEs: "Para 40–50" },
+        { label: "Medium", labelEs: "Mediana", price: "$60", serves: "Serves 25–30", servesEs: "Para 25–30" },
+        { label: "Medium with pork", labelEs: "Mediana con cerdo", price: "$95", serves: "Serves 25–30", servesEs: "Para 25–30" },
+      ],
+    },
+  },
+
+  {
+    id: "tray-lechon-asado",
+    category: "Catering Trays",
+    nameEs: "Lechón Asado",
+    nameEn: "Roasted Pork (Lechón Asado)",
+    description: "Slow-roasted Puerto Rican pork with crispy skin and juicy meat — a celebration classic.",
+    descriptionEs: "Cerdo asado al estilo puertorriqueño con piel crujiente y carne jugosa — un clásico de celebración.",
+    longDescription: "Our lechón asado is marinated and slow-roasted until the skin is crackling and the meat pulls tender. Ordered as a catering tray for parties, holidays, and family gatherings across Madison.",
+    longDescriptionEs: "Nuestro lechón asado se marina y se asa lentamente hasta que la piel quede crujiente y la carne tierna. Se pide en bandeja de catering para fiestas, días festivos y reuniones familiares en Madison.",
+    ingredients: ["Pork", "Adobo", "Garlic", "Sofrito", "Oregano"],
+    flavorProfile: ["Savory", "Garlicky", "Crispy", "Rich"],
+    spiceLevel: 1,
+    culturalContext: "Lechón asado is the star of Puerto Rican celebrations — Christmas, birthdays, and community gatherings — cooked with patience and pride.",
+    culturalContextEs: "El lechón asado es la estrella de las celebraciones puertorriqueñas — Navidad, cumpleaños y reuniones — cocinado con paciencia y orgullo.",
+    pairingSuggestions: ["Arroz con gandules", "Potato salad", "Pasteles"],
+    cateringAvailable: true,
+    dietaryNotes: ["Gluten-free", "Dairy-free"],
+    icon: "Beef",
+    gradient: "from-amber-900 to-orange-800",
+    trayPricing: {
+      sizes: [
+        { label: "Large", labelEs: "Grande", price: "$220" },
+        { label: "Medium", labelEs: "Mediana", price: "$120" },
+        { label: "Small", labelEs: "Pequeña", price: "$60" },
+      ],
+    },
+  },
+
+  {
+    id: "tray-pollo-asado",
+    category: "Catering Trays",
+    nameEs: "Pollo Asado",
+    nameEn: "Roasted Chicken (Pollo Asado)",
+    description: "Adobo-seasoned roasted chicken, juicy and golden — ready for your event table.",
+    descriptionEs: "Pollo asado sazonado con adobo, jugoso y dorado — listo para la mesa de tu evento.",
+    longDescription: "Oven-roasted chicken seasoned with our house adobo, baked until golden and juicy throughout. Available in large and medium catering trays for gatherings of every size.",
+    longDescriptionEs: "Pollo horneado sazonado con nuestro adobo, hasta quedar dorado y jugoso. Disponible en bandejas grandes y medianas de catering para reuniones de todo tamaño.",
+    ingredients: ["Chicken", "Adobo", "Garlic", "Oregano", "Olive oil"],
+    flavorProfile: ["Savory", "Garlicky", "Comforting", "Juicy"],
+    spiceLevel: 1,
+    culturalContext: "Pollo asado is a Sunday staple in Puerto Rican homes — simple, generous, and always shared.",
+    culturalContextEs: "El pollo asado es un clásico dominical en los hogares puertorriqueños — sencillo, generoso y siempre compartido.",
+    pairingSuggestions: ["Arroz con gandules", "Potato salad", "Elbow salad"],
+    cateringAvailable: true,
+    dietaryNotes: ["Gluten-free", "Dairy-free"],
+    icon: "UtensilsCrossed",
+    gradient: "from-orange-700 to-amber-600",
+    photo: "/pollo-horneado-pan-ajo-papa.webp",
+    trayPricing: {
+      sizes: [
+        { label: "Large", labelEs: "Grande", price: "$150" },
+        { label: "Medium", labelEs: "Mediana", price: "$75" },
+      ],
+    },
+  },
+
+  {
+    id: "tray-pastelon",
+    category: "Catering Trays",
+    nameEs: "Pastelón",
+    nameEn: "Pastelón",
+    description: "Sweet plantain lasagna with seasoned meat and cheese — baked for the crowd.",
+    descriptionEs: "Lasaña de plátano maduro con carne sazonada y queso — horneada para la reunión.",
+    longDescription: "Layers of sweet ripe plantains, richly seasoned meat, and melted cheese baked until bubbling. Our catering pastelón trays feed celebration tables from intimate dinners to big parties.",
+    longDescriptionEs: "Capas de plátanos maduros, carne ricamente sazonada y queso derretido horneadas hasta burbujear. Nuestras bandejas de pastelón alimentan mesas de celebración desde cenas íntimas hasta fiestas grandes.",
+    ingredients: ["Ripe plantains", "Seasoned meat", "Sofrito", "Tomato sauce", "Cheese"],
+    flavorProfile: ["Sweet", "Savory", "Cheesy", "Rich"],
+    spiceLevel: 1,
+    culturalContext: "Pastelón is affectionately called Puerto Rican lasagna — sweet plantains meeting savory meat and cheese in one baked pan.",
+    culturalContextEs: "El pastelón se llama cariñosamente la lasaña puertorriqueña — plátanos dulces con carne y queso en un solo horneado.",
+    pairingSuggestions: ["White rice", "Salad", "Cold drink"],
+    cateringAvailable: true,
+    dietaryNotes: ["Gluten-free"],
+    icon: "Utensils",
+    gradient: "from-yellow-800 to-amber-600",
+    photo: "/pastelon.webp",
+    trayPricing: {
+      sizes: [
+        { label: "Large", labelEs: "Grande", price: "$170", serves: "Serves 35–40", servesEs: "Para 35–40" },
+        { label: "Medium", labelEs: "Mediana", price: "$85", serves: "Serves 25–30", servesEs: "Para 25–30" },
+        { label: "Small", labelEs: "Pequeña", price: "$50", serves: "Serves 10–12", servesEs: "Para 10–12" },
+      ],
+    },
+  },
+
+  {
+    id: "tray-shrimp-salad",
+    category: "Catering Trays",
+    nameEs: "Ensalada de Camarones",
+    nameEn: "Shrimp Salad",
+    description: "Shrimp with red, green, and yellow peppers, onion, cilantro, and olive oil.",
+    descriptionEs: "Camarones con pimientos rojo, verde y amarillo, cebolla, cilantro y aceite de oliva.",
+    longDescription: "A bright, fresh shrimp salad tossed with red, green, and yellow peppers, onion, a little cilantro, and olive oil. Built as a catering tray for parties and holiday tables.",
+    longDescriptionEs: "Una ensalada fresca de camarones con pimientos rojo, verde y amarillo, cebolla, un poco de cilantro y aceite de oliva. Preparada en bandeja de catering para fiestas y mesas festivas.",
+    ingredients: ["Shrimp", "Red pepper", "Green pepper", "Yellow pepper", "Onion", "Cilantro", "Olive oil"],
+    flavorProfile: ["Fresh", "Bright", "Savory", "Light"],
+    spiceLevel: 1,
+    culturalContext: "Pepper-forward seafood salads are a coastal Puerto Rican favorite — colorful, olive-oil bright, and made for sharing.",
+    culturalContextEs: "Las ensaladas de mariscos con pimientos son un favorito costero puertorriqueño — coloridas, con aceite de oliva y hechas para compartir.",
+    pairingSuggestions: ["Arroz blanco", "Roasted pork", "Pasteles"],
+    cateringAvailable: true,
+    dietaryNotes: ["Gluten-free", "Dairy-free"],
+    icon: "Fish",
+    gradient: "from-rose-800 to-pink-600",
+    photo: "/arroz-camarones-kingcrab.webp",
+    trayPricing: {
+      sizes: [
+        { label: "Large", labelEs: "Grande", price: "$130" },
+        { label: "Medium", labelEs: "Mediana", price: "$80" },
+        { label: "Small", labelEs: "Pequeña", price: "$60" },
+      ],
+    },
+  },
+
+  {
+    id: "tray-potato-salad",
+    category: "Catering Trays",
+    nameEs: "Ensalada de Papa",
+    nameEn: "Potato Salad",
+    description: "Creamy Puerto Rican-style potato salad — a staple side for every catering table.",
+    descriptionEs: "Ensalada de papa cremosa al estilo puertorriqueño — un acompañamiento esencial en toda mesa de catering.",
+    longDescription: "Our house potato salad, creamy and made for sharing. Ordered as Large, Medium, or Small catering trays alongside rice, meats, and pastelón.",
+    longDescriptionEs: "Nuestra ensalada de papa casera, cremosa y hecha para compartir. Se pide en bandejas Grande, Mediana o Pequeña junto al arroz, las carnes y el pastelón.",
+    ingredients: ["Potatoes", "Mayonnaise", "Peppers", "Onion"],
+    flavorProfile: ["Creamy", "Savory", "Comforting", "Fresh"],
+    spiceLevel: 1,
+    culturalContext: "Mayo-based potato salad is a fixture at Puerto Rican parties — the cool, creamy counterpoint to roasted meats and arroz.",
+    culturalContextEs: "La ensalada de papa con mayonesa es fija en las fiestas puertorriqueñas — el contraste cremoso a las carnes asadas y el arroz.",
+    pairingSuggestions: ["Roasted chicken", "Roasted pork", "Arroz con gandules"],
+    cateringAvailable: true,
+    dietaryNotes: ["Vegetarian", "Gluten-free"],
+    icon: "Utensils",
+    gradient: "from-stone-600 to-stone-400",
+    trayPricing: {
+      sizes: [
+        { label: "Large", labelEs: "Grande", price: "$115" },
+        { label: "Medium", labelEs: "Mediana", price: "$65" },
+        { label: "Small", labelEs: "Pequeña", price: "$35" },
+      ],
+    },
+  },
+
+  {
+    id: "tray-elbow-salad",
+    category: "Catering Trays",
+    nameEs: "Ensalada de Coditos",
+    nameEn: "Elbow Salad",
+    description: "Creamy elbow pasta salad — the classic Boricua side for parties and trays.",
+    descriptionEs: "Ensalada cremosa de coditos — el acompañamiento clásico boricua para fiestas y bandejas.",
+    longDescription: "Elbow (coditos) pasta salad, creamy and generously portioned for catering. Available in Large, Medium, and Small trays.",
+    longDescriptionEs: "Ensalada de coditos cremosa y generosa para catering. Disponible en bandejas Grande, Mediana y Pequeña.",
+    ingredients: ["Elbow pasta", "Mayonnaise", "Peppers", "Onion"],
+    flavorProfile: ["Creamy", "Savory", "Comforting", "Classic"],
+    spiceLevel: 1,
+    culturalContext: "Ensalada de coditos shows up at almost every Puerto Rican gathering — simple, beloved, and always empty by the end of the night.",
+    culturalContextEs: "La ensalada de coditos aparece en casi toda reunión puertorriqueña — sencilla, querida y siempre vacía al final de la noche.",
+    pairingSuggestions: ["Fried chicken", "Steak", "Arroz con habichuelas"],
+    cateringAvailable: true,
+    dietaryNotes: ["Vegetarian"],
+    icon: "UtensilsCrossed",
+    gradient: "from-amber-700 to-yellow-500",
+    trayPricing: {
+      sizes: [
+        { label: "Large", labelEs: "Grande", price: "$115" },
+        { label: "Medium", labelEs: "Mediana", price: "$65" },
+        { label: "Small", labelEs: "Pequeña", price: "$35" },
+      ],
+    },
+  },
+
+  {
+    id: "tray-guineitos-mollejas",
+    category: "Catering Trays",
+    nameEs: "Mollejas de Pollo con Guineitos en Escabeche",
+    nameEn: "Chicken Gizzards with Pickled Green Bananas",
+    description: "Braised chicken gizzards with tangy pickled green bananas in escabeche.",
+    descriptionEs: "Mollejas de pollo guisadas con guineitos verdes encurtidos en escabeche.",
+    longDescription: "A bold island classic: slow-braised chicken gizzards paired with green bananas marinated in vinegar escabeche with onions, garlic, and olive oil. Served as catering trays in three sizes.",
+    longDescriptionEs: "Un clásico isleño audaz: mollejas de pollo guisadas con guineos verdes marinados en escabeche de vinagre con cebolla, ajo y aceite de oliva. En bandejas de catering en tres tamaños.",
+    ingredients: ["Chicken gizzards", "Green bananas", "Vinegar", "Onions", "Garlic", "Olive oil", "Adobo"],
+    flavorProfile: ["Tangy", "Savory", "Bold", "Earthy"],
+    spiceLevel: 2,
+    culturalContext: "Guineitos en escabeche and mollejas are traditional Puerto Rican dishes rooted in making the most of every ingredient.",
+    culturalContextEs: "Los guineitos en escabeche y las mollejas son platos tradicionales puertorriqueños enraizados en aprovechar cada ingrediente.",
+    pairingSuggestions: ["White rice", "Cold drink"],
+    cateringAvailable: true,
+    dietaryNotes: ["Gluten-free", "Dairy-free"],
+    icon: "Soup",
+    gradient: "from-green-900 to-emerald-700",
+    photo: "/guineitos-mollejas.webp",
+    trayPricing: {
+      sizes: [
+        { label: "Large", labelEs: "Grande", price: "$120", serves: "Serves 40–50", servesEs: "Para 40–50" },
+        { label: "Medium", labelEs: "Mediana", price: "$70", serves: "Serves 25–30", servesEs: "Para 25–30" },
+        { label: "Small", labelEs: "Pequeña", price: "$40", serves: "Serves 10–12", servesEs: "Para 10–12" },
+      ],
+    },
+  },
+
+  {
+    id: "tray-yuca-escabeche",
+    category: "Catering Trays",
+    nameEs: "Yuca en Escabeche",
+    nameEn: "Cassava in Escabeche",
+    description: "Tender cassava (yuca) in tangy vinegar escabeche with onions and olive oil.",
+    descriptionEs: "Yuca tierna en escabeche de vinagre con cebolla y aceite de oliva.",
+    longDescription: "Boiled cassava tossed in a classic escabeche of vinegar, onions, garlic, and olive oil. A bright, tangy catering tray that pairs with roasted meats and arroz.",
+    longDescriptionEs: "Yuca hervida en un escabeche clásico de vinagre, cebolla, ajo y aceite de oliva. Una bandeja brillante y ácida que combina con carnes asadas y arroz.",
+    ingredients: ["Cassava (yuca)", "Vinegar", "Onions", "Garlic", "Olive oil"],
+    flavorProfile: ["Tangy", "Earthy", "Bright", "Savory"],
+    spiceLevel: 1,
+    culturalContext: "Yuca en escabeche is a traditional Puerto Rican side — starchy, pickled, and made for the celebration table.",
+    culturalContextEs: "La yuca en escabeche es un acompañamiento tradicional puertorriqueño — feculento, encurtido y hecho para la mesa de celebración.",
+    pairingSuggestions: ["Roasted pork", "Roasted chicken", "Arroz con gandules"],
+    cateringAvailable: true,
+    dietaryNotes: ["Vegetarian", "Gluten-free", "Dairy-free"],
+    icon: "LeafyGreen",
+    gradient: "from-lime-900 to-green-700",
+    trayPricing: {
+      sizes: [
+        { label: "Large", labelEs: "Grande", price: "$115", serves: "Serves 40–50", servesEs: "Para 40–50" },
+        { label: "Medium", labelEs: "Mediana", price: "$65", serves: "Serves 25–30", servesEs: "Para 25–30" },
+        { label: "Small", labelEs: "Pequeña", price: "$35", serves: "Serves 10–12", servesEs: "Para 10–12" },
+      ],
+    },
   },
 
   // ── LUNCH PLATES ──────────────────────────────────────────────────────────
@@ -193,12 +470,12 @@ export const menuItems: MenuItem[] = [
     id: "bistec-encebollado-habichuelas-negras",
     category: "Lunch Plates",
     nameEs: "Arroz Guisado con Habichuelas Negras, Ensalada de Coditos y Bistec Encebollado",
-    nameEn: "Rice with Black Beans, Macaroni Salad & Steak with Onions",
+    nameEn: "Rice with Black Beans, Elbow Salad & Steak with Onions",
     description: "Puerto Rican rice with black beans, tender steak smothered in caramelized onions, and creamy elbow pasta salad.",
     descriptionEs: "Arroz con habichuelas negras, bistec cubierto de cebollas caramelizadas y ensalada de coditos cremosa.",
     longDescription: "Bistec encebollado is a Puerto Rican classic, thin-cut steak marinated in adobo and finished with a generous heap of caramelized onions. Paired with our black bean rice and a creamy coditos pasta salad, this plate hits every note.",
     longDescriptionEs: "El bistec encebollado es un clásico puertorriqueño, bistec fino marinado en adobo y cubierto con cebollas caramelizadas. Con arroz de habichuelas negras y ensalada de coditos cremosa.",
-    ingredients: ["Seasoned rice", "Black beans", "Steak", "Onions", "Adobo", "Elbow macaroni salad", "Mayonnaise"],
+    ingredients: ["Seasoned rice", "Black beans", "Steak", "Onions", "Adobo", "Elbow salad", "Mayonnaise"],
     flavorProfile: ["Savory", "Rich", "Caramelized", "Hearty"],
     spiceLevel: 2,
     culturalContext: "Bistec encebollado is a weeknight staple in Puerto Rican homes, quick-cooking steak made deeply flavorful with adobo and a mountain of sweet caramelized onions.",
@@ -237,12 +514,12 @@ export const menuItems: MenuItem[] = [
     id: "pollo-frito-habichuelas-negras-coditos",
     category: "Lunch Plates",
     nameEs: "Arroz con Habichuelas Negras, Pollo Frito y Ensalada de Coditos",
-    nameEn: "Rice with Black Beans, Fried Chicken & Macaroni Salad",
-    description: "Crispy golden fried chicken alongside Puerto Rican rice with black beans and creamy macaroni salad.",
+    nameEn: "Rice with Black Beans, Fried Chicken & Elbow Salad",
+    description: "Crispy golden fried chicken alongside Puerto Rican rice with black beans and creamy elbow salad.",
     descriptionEs: "Pollo frito crujiente y dorado con arroz de habichuelas negras y ensalada de coditos cremosa.",
     longDescription: "Crispy on the outside, juicy on the inside, our fried chicken is seasoned with our house spice blend and fried to golden perfection. Alongside black bean rice and a creamy coditos salad, this plate is pure comfort on a tray.",
     longDescriptionEs: "Crujiente por fuera, jugoso por dentro, nuestro pollo frito sazonado con nuestra mezcla de especias. Con arroz de habichuelas negras y ensalada de coditos cremosa.",
-    ingredients: ["Fried chicken", "Seasoning blend", "Rice", "Black beans", "Sofrito", "Elbow macaroni salad"],
+    ingredients: ["Fried chicken", "Seasoning blend", "Rice", "Black beans", "Sofrito", "Elbow salad"],
     flavorProfile: ["Crispy", "Savory", "Comforting", "Creamy"],
     spiceLevel: 1,
     culturalContext: "Fried chicken is a beloved comfort food across the Caribbean, often served with rice, beans, and pasta salad for a complete and satisfying meal.",

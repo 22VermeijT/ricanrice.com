@@ -10,11 +10,12 @@ import { PrStar } from "@/components/ui/Illustrations";
 import { useLanguage } from "@/components/LanguageContext";
 
 const categoryColors: Record<string, { bg: string; glow: string }> = {
-  "Take Home":     { bg: "#001840", glow: "rgba(0,24,64,0.4)" },
-  "Lunch Plates":  { bg: "#7A2E0E", glow: "rgba(122,46,14,0.4)" },
-  "By the Dozen":  { bg: "#1A5C2A", glow: "rgba(26,92,42,0.4)" },
-  "Desserts":      { bg: "#8B4A00", glow: "rgba(139,74,0,0.4)" },
-  "Sides":         { bg: "#1C3A5C", glow: "rgba(28,58,92,0.4)" },
+  "Take Home":      { bg: "#001840", glow: "rgba(0,24,64,0.4)" },
+  "Catering Trays": { bg: "#6B2E1F", glow: "rgba(107,46,31,0.4)" },
+  "Lunch Plates":   { bg: "#7A2E0E", glow: "rgba(122,46,14,0.4)" },
+  "By the Dozen":   { bg: "#1A5C2A", glow: "rgba(26,92,42,0.4)" },
+  "Desserts":       { bg: "#8B4A00", glow: "rgba(139,74,0,0.4)" },
+  "Sides":          { bg: "#1C3A5C", glow: "rgba(28,58,92,0.4)" },
 };
 
 function SpiceLevel({ level, labels }: { level: number; labels: readonly string[] }) {
@@ -168,6 +169,45 @@ export default function MenuModal({ item, onClose }: Props) {
                     {description}
                   </p>
                 </div>
+
+                {item.trayPricing && (
+                  <div className="border border-[#C8952C]/35 bg-[#C8952C]/5 p-4 space-y-3">
+                    <h3 className="text-xs font-bold text-[#001840] uppercase tracking-widest">
+                      {m.traySizes}
+                    </h3>
+                    {(language === "es" ? item.trayPricing.introEs : item.trayPricing.intro) && (
+                      <p className="text-xs text-[#6E6E73] leading-relaxed">
+                        {language === "es" ? item.trayPricing.introEs : item.trayPricing.intro}
+                      </p>
+                    )}
+                    <ul className="space-y-2">
+                      {item.trayPricing.sizes.map((s) => (
+                        <li
+                          key={s.label}
+                          className="flex items-baseline justify-between gap-3 border-b border-[#C8952C]/20 pb-2 last:border-0 last:pb-0"
+                        >
+                          <div className="min-w-0">
+                            <p className="text-sm font-bold text-[#001840]">
+                              {language === "es" ? s.labelEs : s.label}
+                            </p>
+                            {(language === "es" ? s.servesEs : s.serves) && (
+                              <p className="text-xs text-[#6E6E73]">
+                                {language === "es" ? s.servesEs : s.serves}
+                              </p>
+                            )}
+                          </div>
+                          <span
+                            className="shrink-0 text-lg font-bold text-[#C8952C]"
+                            style={{ fontFamily: "var(--font-display)" }}
+                          >
+                            {s.price}
+                          </span>
+                        </li>
+                      ))}
+                    </ul>
+                    <p className="text-[11px] text-[#6E6E73] leading-relaxed">{m.trayFootnote}</p>
+                  </div>
+                )}
 
                 {/* Quick stats */}
                 <div className="grid grid-cols-2 gap-3">

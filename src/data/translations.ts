@@ -113,7 +113,7 @@ export const translations = {
       riceLabel: "Rice",
       riceOptions: ["Arroz con gandules", "Rice with red beans"],
       saladLabel: "Salad",
-      saladOptions: ["Potato salad", "Elbow (macaroni) salad"],
+      saladOptions: ["Potato salad", "Elbow salad"],
       proteinLabel: "Main",
       proteinOptions: ["Roasted turkey", "Roast pork"],
       chooseOne: "Choose one",
@@ -198,6 +198,7 @@ export const translations = {
       ctaBtn: "Start Planning →",
       categoryNames: {
         "Take Home": "Take Home",
+        "Catering Trays": "Catering Trays",
         "Lunch Plates": "Lunch Plates",
         "By the Dozen": "By the Dozen",
         "Desserts": "Desserts",
@@ -217,6 +218,10 @@ export const translations = {
       pairsWell: "Pairs Well With",
       dietaryNotes: "Dietary Notes",
       orderForEvent: "Order for Your Event",
+      traySizes: "Tray sizes & prices",
+      trayFrom: "From",
+      trayMore: "more",
+      trayFootnote: "All trays 4 inches deep. Large 20×12 · Medium 10×12 · Small 12×6.",
     },
     ordering: {
       badge: "Order Lunch",
@@ -530,6 +535,7 @@ export const translations = {
       ctaBtn: "Comienza a Planificar →",
       categoryNames: {
         "Take Home": "Para Llevar",
+        "Catering Trays": "Bandejas de Catering",
         "Lunch Plates": "Platos de Almuerzo",
         "By the Dozen": "Por Docena",
         "Desserts": "Postres",
@@ -549,6 +555,10 @@ export const translations = {
       pairsWell: "Combina Bien Con",
       dietaryNotes: "Notas Dietéticas",
       orderForEvent: "Pedir para Tu Evento",
+      traySizes: "Tamaños y precios de bandeja",
+      trayFrom: "Desde",
+      trayMore: "más",
+      trayFootnote: "Todas las bandejas miden 4 pulgadas de profundidad. Grande 20×12 · Mediana 10×12 · Pequeña 12×6.",
     },
     ordering: {
       badge: "Pide Tu Almuerzo",

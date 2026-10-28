@@ -11,12 +11,28 @@ import { PrStar } from "@/components/ui/Illustrations";
 import { useLanguage } from "@/components/LanguageContext";
 
 const categoryColors: Record<string, { bg: string; text: string; glow: string }> = {
-  "Take Home":    { bg: "#001840", text: "white", glow: "rgba(0,24,64,0.5)" },
-  "Lunch Plates": { bg: "#7A2E0E", text: "white", glow: "rgba(122,46,14,0.5)" },
-  "By the Dozen": { bg: "#1A5C2A", text: "white", glow: "rgba(26,92,42,0.5)" },
-  "Desserts":     { bg: "#8B4A00", text: "white", glow: "rgba(139,74,0,0.5)" },
-  "Sides":        { bg: "#1C3A5C", text: "white", glow: "rgba(28,58,92,0.5)" },
+  "Take Home":      { bg: "#001840", text: "white", glow: "rgba(0,24,64,0.5)" },
+  "Catering Trays": { bg: "#6B2E1F", text: "white", glow: "rgba(107,46,31,0.5)" },
+  "Lunch Plates":   { bg: "#7A2E0E", text: "white", glow: "rgba(122,46,14,0.5)" },
+  "By the Dozen":   { bg: "#1A5C2A", text: "white", glow: "rgba(26,92,42,0.5)" },
+  "Desserts":       { bg: "#8B4A00", text: "white", glow: "rgba(139,74,0,0.5)" },
+  "Sides":          { bg: "#1C3A5C", text: "white", glow: "rgba(28,58,92,0.5)" },
 };
+
+function lowestTrayPrice(item: MenuItem): string | null {
+  const sizes = item.trayPricing?.sizes;
+  if (!sizes?.length) return null;
+  let min = Infinity;
+  let label = "";
+  for (const s of sizes) {
+    const n = Number(s.price.replace(/[^0-9.]/g, ""));
+    if (!Number.isNaN(n) && n < min) {
+      min = n;
+      label = s.price;
+    }
+  }
+  return label || null;
+}
 
 const getCatColor = (cat: string) =>
   categoryColors[cat] ?? { bg: "#001840", text: "white", glow: "rgba(0,24,64,0.5)" };
@@ -30,6 +46,7 @@ interface MenuCardProps {
 function MenuCard({ item, onClick, index }: MenuCardProps) {
   const { t, language } = useLanguage();
   const catColor = getCatColor(item.category);
+  const fromPrice = lowestTrayPrice(item);
 
   return (
     <motion.div
@@ -111,6 +128,37 @@ function MenuCard({ item, onClick, index }: MenuCardProps) {
         <p className="text-[#6E6E73] text-sm leading-relaxed line-clamp-2 flex-1">
           {language === "es" ? item.descriptionEs : item.description}
         </p>
+
+        {item.trayPricing && (
+          <div className="mt-3 space-y-1.5">
+            {fromPrice && (
+              <p className="text-sm font-bold text-[#C8952C]" style={{ fontFamily: "var(--font-display)" }}>
+                {t.menuModal.trayFrom} {fromPrice}
+              </p>
+            )}
+            <ul className="space-y-0.5">
+              {item.trayPricing.sizes.slice(0, 3).map((s) => (
+                <li key={s.label} className="flex items-baseline justify-between gap-2 text-xs text-[#3A3A3C]">
+                  <span className="truncate">
+                    {language === "es" ? s.labelEs : s.label}
+                    {(language === "es" ? s.servesEs : s.serves) && (
+                      <span className="text-[#6E6E73]">
+                        {" "}
+                        · {language === "es" ? s.servesEs : s.serves}
+                      </span>
+                    )}
+                  </span>
+                  <span className="shrink-0 font-bold text-[#001840]">{s.price}</span>
+                </li>
+              ))}
+              {item.trayPricing.sizes.length > 3 && (
+                <li className="text-[10px] text-[#6E6E73] font-medium">
+                  +{item.trayPricing.sizes.length - 3} {t.menuModal.trayMore}
+                </li>
+              )}
+            </ul>
+          </div>
+        )}
 
         <div className="mt-auto pt-4 border-t border-gray-100">
           <span
