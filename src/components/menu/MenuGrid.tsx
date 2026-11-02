@@ -176,11 +176,13 @@ function MenuCard({ item, onClick, index }: MenuCardProps) {
 interface Props {
   limit?: number;
   showFilters?: boolean;
+  /** When set, only this category is shown (used on the home featured grid). */
+  categoryFilter?: string;
 }
 
-export default function MenuGrid({ limit, showFilters = true }: Props) {
+export default function MenuGrid({ limit, showFilters = true, categoryFilter }: Props) {
   const { t } = useLanguage();
-  const [activeCategory, setActiveCategory] = useState("All");
+  const [activeCategory, setActiveCategory] = useState(categoryFilter ?? "All");
   const [gridKey, setGridKey] = useState(0);
   const [selectedItem, setSelectedItem] = useState<MenuItem | null>(null);
 
@@ -190,8 +192,9 @@ export default function MenuGrid({ limit, showFilters = true }: Props) {
     setGridKey((k) => k + 1);
   };
 
-  const filtered =
-    activeCategory === "All"
+  const filtered = categoryFilter
+    ? menuItems.filter((item) => item.category === categoryFilter)
+    : activeCategory === "All"
       ? menuItems
       : menuItems.filter((item) => item.category === activeCategory);
 

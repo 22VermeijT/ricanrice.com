@@ -93,7 +93,7 @@ export default function FeaturedMenu() {
           </AnimatedSection>
         </div>
 
-        <MenuGrid limit={8} showFilters={false} />
+        <MenuGrid limit={8} showFilters={false} categoryFilter="Lunch Plates" />
 
         <AnimatedSection className="mt-12 text-center">
           <Link
